@@ -1,0 +1,3 @@
+C:/Users/nexga/Documents/GitHub/tcc/Middleware/MiddlewareLoader/c++/MiddlewareLoader/cmake-build-debug/CMakeFiles/MiddlewareLoader.dir
+C:/Users/nexga/Documents/GitHub/tcc/Middleware/MiddlewareLoader/c++/MiddlewareLoader/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/nexga/Documents/GitHub/tcc/Middleware/MiddlewareLoader/c++/MiddlewareLoader/cmake-build-debug/CMakeFiles/rebuild_cache.dir
