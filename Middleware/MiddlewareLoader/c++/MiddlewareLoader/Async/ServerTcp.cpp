@@ -10,6 +10,7 @@ void ServerTcp::loopFunction(ServerTcp *Server) {
         Server->clients[Server->idCounter]._socket = accept(Server->_socket,(struct sockaddr*)&Server->sockData,&clientDataLen);
         Server->clients[Server->idCounter].setId(Server->idCounter);
         Server->clients[Server->idCounter].setFather(Server);
+        Server->clients[Server->idCounter].setEvents(Server->events);
         Server->clients[Server->idCounter].Start();
 
 
@@ -29,7 +30,7 @@ ServerTcp::ServerTcp(int port, int limit) : port(port), limit(limit) {
 
 ErrorMessage ServerTcp::Use(MiddlewareModule module, EventTypes event, int priority) {
     ErrorMessage DEFAULT;
-    DEFAULT.code = ErrorCodes::NoError;
+    DEFAULT.code    = ErrorCodes::NoError;
 
     module.priority = priority;
 
@@ -40,31 +41,32 @@ ErrorMessage ServerTcp::Use(MiddlewareModule module, EventTypes event, int prior
 }
 
 ErrorMessage ServerTcp::Start(bool detach) {
-    this->idCounter = 0;
-    ErrorMessage DEFAULT;
-    DEFAULT.code = ErrorCodes::NoError;
-    DEFAULT.description="OK";
+    this->idCounter     = 0;
 
-    this->sockData.sin_family = AF_INET;
-    this->sockData.sin_port = htons(this->port);
-    this->sockData.sin_addr.s_addr = htonl(INADDR_ANY);
+    ErrorMessage DEFAULT;
+    DEFAULT.code        = ErrorCodes::NoError;
+    DEFAULT.description ="OK";
+
+    this->sockData.sin_family       = AF_INET;
+    this->sockData.sin_port         = htons(this->port);
+    this->sockData.sin_addr.s_addr  = htonl(INADDR_ANY);
 
     if (bind(this->_socket, (struct sockaddr *) &this->sockData, sizeof(this->sockData)) < 0){
         closesocket(this->_socket);
-        DEFAULT.code = ErrorCodes::BindError;
+        DEFAULT.code        = ErrorCodes::BindError;
         DEFAULT.description = "Bind Error";
         return DEFAULT;
     }
 
     if (listen(this->_socket, this->limit) < 0){
         closesocket(this->_socket);
-        DEFAULT.code = ErrorCodes::ListenError;
+        DEFAULT.code        = ErrorCodes::ListenError;
         DEFAULT.description = "Listen Error";
         return DEFAULT;
     }
 
-    this->listening = true;
-    this->loopThread = std::thread(this->loopFunction,this);
+    this->listening     = true;
+    this->loopThread    = std::thread(this->loopFunction,this);
     if(detach)
         this->loopThread.detach();
     else
@@ -92,8 +94,8 @@ void ServerClient::setId(int id) {
 }
 
 void ServerClient::Start() {
-    this->loopThread = std::thread(this->loopFunction,this);
-    this->connected = true;
+    this->loopThread    = std::thread(this->loopFunction,this);
+    this->connected     = true;
     this->loopThread.detach();
 }
 
@@ -106,16 +108,70 @@ void ServerClient::setFather(ServerTcp *father) {
 }
 
 void ServerClient::loopFunction(ServerClient *Client) {
+
+    ErrorMessage Err;
+    Err.code        = ErrorCodes::NoError;
+    Err.description = "OK";
+
     while(Client->connected){
         auto buffer = Buffer(Client->father->DEFAULTBUFFERSIZE);
         buffer.setActualSize(-1);
         buffer.setActualSize(recv(Client->_socket,buffer[0],Client->father->DEFAULTBUFFERSIZE,0));
-        if(buffer.getActualSize()<=0) {
-            return;
-        }
-        std::cout<<buffer.toString()<<std::endl;
 
+        if(buffer.getActualSize()<=0) {
+            Err.code        = ErrorCodes::MessageError;
+            Err.description = "Connection was lost";
+            break;
+        }
+
+        /**
+         * Argumentos a serem passados.
+         */
+        std::map<std::string,void*> Args;
+        Args["Server"]       = Client->father;
+        Args["Client"]       = Client;
+        Args["Buffer"]       = &buffer;
+        Args["ErrorMessage"] = &Err;
+
+        for(auto event:Client->events[(int)EventTypes::Received]){
+            if( event.ServerMain!=NULL) {
+                event.ServerMain(Args);
+            }
+        }
+
+    }
+
+    std::map<std::string,void*> Args;
+    Args["Server"]          = Client->father;
+    Args["Client"]          = Client;
+    Args["Buffer"]          = NULL;
+    Args["ErrorMessage"]    = &Err;
+
+    for(auto event:Client->events[(int)EventTypes::Disconnected]){
+        if( event.ServerMain!=NULL) {
+            event.ServerMain(Args);
+        }
     }
 }
 
 ServerClient::ServerClient() {}
+
+const std::vector<std::vector<MiddlewareModule>> &ServerClient::getEvents() const {
+    return events;
+}
+
+void ServerClient::setEvents(std::vector<std::vector<MiddlewareModule>> &events) {
+    ServerClient::events = events;
+}
+
+ErrorMessage ServerClient::sendBuffer(Buffer data) {
+    ErrorMessage Err;
+    Err.code        = ErrorCodes::NoError;
+    Err.description = "OK";
+    if(send(this->_socket,data[0],data.getActualSize(),0)!=data.getActualSize()) {
+        Err.code        = ErrorCodes::MessageError;
+        Err.description = "error sending bytes incompatible amount sent";
+        return Err;
+    }
+    return Err;
+}

@@ -42,6 +42,7 @@ private:
     bool connected;
     int id;
     ServerTcp* father;
+    std::vector<std::vector<MiddlewareModule>> events;
 
     std::thread loopThread;
     static void loopFunction(ServerClient* Client);
@@ -64,6 +65,12 @@ public:
     int & getId();
 
     void setId(int id);
+
+    const std::vector<std::vector<MiddlewareModule>> &getEvents() const;
+
+    void setEvents(std::vector<std::vector<MiddlewareModule>> &events);
+
+    ErrorMessage sendBuffer(Buffer data);
 };
 
 #endif //MIDDLEWARELOADER_SERVERTCP_H

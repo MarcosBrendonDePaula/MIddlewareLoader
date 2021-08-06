@@ -6,10 +6,6 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/nexga/Documents/GitHub/tcc/Middleware/MiddlewareLoader/c++/MiddlewareLoader/Async/ServerTcp.cpp
-ServerTcp.h
-C:/Users/nexga/Documents/GitHub/tcc/Middleware/MiddlewareLoader/c++/MiddlewareLoader/Async/ServerTcp.h
-
 C:/Users/nexga/Documents/GitHub/tcc/Middleware/MiddlewareLoader/c++/MiddlewareLoader/Async/ServerTcp.h
 ../Socket.h
 C:/Users/nexga/Documents/GitHub/tcc/Middleware/MiddlewareLoader/c++/MiddlewareLoader/Socket.h
@@ -56,5 +52,23 @@ C:/Users/nexga/Documents/GitHub/tcc/Middleware/MiddlewareLoader/c++/MiddlewareLo
 winsock2.h
 -
 cstring
+-
+
+C:/Users/nexga/Documents/GitHub/tcc/Middleware/MiddlewareLoader/c++/MiddlewareLoader/main.cpp
+iostream
+-
+./Async/ServerTcp.h
+C:/Users/nexga/Documents/GitHub/tcc/Middleware/MiddlewareLoader/c++/MiddlewareLoader/Async/ServerTcp.h
+./testClass/SimpleMiddleware.hpp
+C:/Users/nexga/Documents/GitHub/tcc/Middleware/MiddlewareLoader/c++/MiddlewareLoader/testClass/SimpleMiddleware.hpp
+
+C:/Users/nexga/Documents/GitHub/tcc/Middleware/MiddlewareLoader/c++/MiddlewareLoader/testClass/SimpleMiddleware.hpp
+../MiddlewareModule.h
+C:/Users/nexga/Documents/GitHub/tcc/Middleware/MiddlewareLoader/c++/MiddlewareLoader/MiddlewareModule.h
+../Async/ServerTcp.h
+C:/Users/nexga/Documents/GitHub/tcc/Middleware/MiddlewareLoader/c++/MiddlewareLoader/Async/ServerTcp.h
+map
+-
+iostream
 -
 
