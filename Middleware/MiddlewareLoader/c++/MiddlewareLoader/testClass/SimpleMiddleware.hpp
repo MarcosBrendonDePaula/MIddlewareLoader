@@ -4,6 +4,7 @@
 #pragma once
 #include "../MiddlewareModule.h"
 #include "../Async/ServerTcp.h"
+#include "../Async/ClientTcp.h"
 #include <map>
 #include <iostream>
 
@@ -34,10 +35,24 @@ namespace SimpleMiddleware {
         */
         cout<<"Response"<<endl;
         Buffer *res = (Buffer*)Args["Buffer"];
-        ServerClient* Client = (ServerClient*)Args["Client"];
 
+    }
+
+    void MainCliente(std::map<std::string, void *> & Args){
+        /*
+        Default Args;
+        ArgName-----------------CastingType---------
+        Args["Server"]          type: ServerTcp*
+        Args["Client"]          type: ServerClient*
+        Args["Buffer"]          type: Buffer*
+        Args["ErrorMessage"]    type: ErrorMessage*
+        --------------------------------------------
+        */
+        cout<<"Response"<<endl;
+        Buffer *res = (Buffer*)Args["Buffer"];
+        ClientTcp *cli = (ClientTcp*)Args["Client"];
         cout<<"Buffer: "<<res->toString()<<endl;
-        Client->sendBuffer(Buffer("Resposta!\n"));
+        cli->sendBuffer(Buffer("OK"));
     }
 
     //Função necessaria para remover instancias criadas e passadas a outros middlewares
@@ -57,5 +72,6 @@ namespace SimpleMiddleware {
 
     MiddlewareModule CONNECT(Main,NULL);
     MiddlewareModule RESPONSE(Main1,NULL);
+    MiddlewareModule RESPONSECliente(NULL,MainCliente);
     MiddlewareModule REMOVEARGS(RemoveCustomArgs,NULL);
 }

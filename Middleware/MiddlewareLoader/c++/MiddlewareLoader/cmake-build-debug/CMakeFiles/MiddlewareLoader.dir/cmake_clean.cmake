@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/MiddlewareLoader.dir/Async/ClientTcp.cpp.obj"
   "CMakeFiles/MiddlewareLoader.dir/Async/ServerTcp.cpp.obj"
   "CMakeFiles/MiddlewareLoader.dir/Buffer.cpp.obj"
   "CMakeFiles/MiddlewareLoader.dir/ErrorMessage.cpp.obj"

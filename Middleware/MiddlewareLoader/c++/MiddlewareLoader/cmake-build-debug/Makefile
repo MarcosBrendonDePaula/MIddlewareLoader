@@ -141,6 +141,33 @@ MiddlewareLoader/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\MiddlewareLoader.dir\build.make CMakeFiles/MiddlewareLoader.dir/build
 .PHONY : MiddlewareLoader/fast
 
+Async/ClientTcp.obj: Async/ClientTcp.cpp.obj
+
+.PHONY : Async/ClientTcp.obj
+
+# target to build an object file
+Async/ClientTcp.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MiddlewareLoader.dir\build.make CMakeFiles/MiddlewareLoader.dir/Async/ClientTcp.cpp.obj
+.PHONY : Async/ClientTcp.cpp.obj
+
+Async/ClientTcp.i: Async/ClientTcp.cpp.i
+
+.PHONY : Async/ClientTcp.i
+
+# target to preprocess a source file
+Async/ClientTcp.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MiddlewareLoader.dir\build.make CMakeFiles/MiddlewareLoader.dir/Async/ClientTcp.cpp.i
+.PHONY : Async/ClientTcp.cpp.i
+
+Async/ClientTcp.s: Async/ClientTcp.cpp.s
+
+.PHONY : Async/ClientTcp.s
+
+# target to generate assembly for a file
+Async/ClientTcp.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MiddlewareLoader.dir\build.make CMakeFiles/MiddlewareLoader.dir/Async/ClientTcp.cpp.s
+.PHONY : Async/ClientTcp.cpp.s
+
 Async/ServerTcp.obj: Async/ServerTcp.cpp.obj
 
 .PHONY : Async/ServerTcp.obj
@@ -339,6 +366,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... MiddlewareLoader
+	@echo ... Async/ClientTcp.obj
+	@echo ... Async/ClientTcp.i
+	@echo ... Async/ClientTcp.s
 	@echo ... Async/ServerTcp.obj
 	@echo ... Async/ServerTcp.i
 	@echo ... Async/ServerTcp.s

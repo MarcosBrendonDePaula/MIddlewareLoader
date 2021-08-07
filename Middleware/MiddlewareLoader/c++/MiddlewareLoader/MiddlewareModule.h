@@ -15,9 +15,9 @@ public:
      * Server:(ServerTcp*)
      * Client:(ServerClient*)
      */
-    MiddlewareModule(void (*ServerMain)(std::map<std::string, void *> &Args) = NULL, void (*ClientMain)()= NULL );
+    MiddlewareModule(void (*ServerMain)(std::map<std::string, void *> &Args) = NULL, void (*ClientMain)(std::map<std::string, void *> &)= NULL );
     void (*ServerMain)(std::map<std::string,void*>&) = NULL;
-    void (*ClientMain)() = NULL;
+    void (*ClientMain)(std::map<std::string,void*>&) = NULL;
     int priority;
     bool operator< (MiddlewareModule check);
 private:

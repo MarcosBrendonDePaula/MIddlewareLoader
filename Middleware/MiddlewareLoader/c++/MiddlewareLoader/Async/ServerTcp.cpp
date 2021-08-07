@@ -168,6 +168,19 @@ ErrorMessage ServerClient::sendBuffer(Buffer data) {
     ErrorMessage Err;
     Err.code        = ErrorCodes::NoError;
     Err.description = "OK";
+
+    std::map<std::string,void*> Args;
+    Args["Server"]          = this->father;
+    Args["Client"]          = this;
+    Args["Buffer"]          = &data;
+    Args["ErrorMessage"]    = &Err;
+
+    for(auto event:this->events[(int)EventTypes::Sended]){
+        if( event.ServerMain!=NULL) {
+            event.ServerMain(Args);
+        }
+    }
+
     if(send(this->_socket,data[0],data.getActualSize(),0)!=data.getActualSize()) {
         Err.code        = ErrorCodes::MessageError;
         Err.description = "error sending bytes incompatible amount sent";

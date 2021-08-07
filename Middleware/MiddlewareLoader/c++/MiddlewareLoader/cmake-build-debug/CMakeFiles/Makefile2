@@ -92,12 +92,12 @@ clean: CMakeFiles/MiddlewareLoader.dir/clean
 CMakeFiles/MiddlewareLoader.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\MiddlewareLoader.dir\build.make CMakeFiles/MiddlewareLoader.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\MiddlewareLoader.dir\build.make CMakeFiles/MiddlewareLoader.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\nexga\Documents\GitHub\tcc\Middleware\MiddlewareLoader\c++\MiddlewareLoader\cmake-build-debug\CMakeFiles --progress-num=1,2,3,4,5,6,7,8 "Built target MiddlewareLoader"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\nexga\Documents\GitHub\tcc\Middleware\MiddlewareLoader\c++\MiddlewareLoader\cmake-build-debug\CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9 "Built target MiddlewareLoader"
 .PHONY : CMakeFiles/MiddlewareLoader.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/MiddlewareLoader.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\nexga\Documents\GitHub\tcc\Middleware\MiddlewareLoader\c++\MiddlewareLoader\cmake-build-debug\CMakeFiles 8
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\nexga\Documents\GitHub\tcc\Middleware\MiddlewareLoader\c++\MiddlewareLoader\cmake-build-debug\CMakeFiles 9
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/MiddlewareLoader.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\nexga\Documents\GitHub\tcc\Middleware\MiddlewareLoader\c++\MiddlewareLoader\cmake-build-debug\CMakeFiles 0
 .PHONY : CMakeFiles/MiddlewareLoader.dir/rule

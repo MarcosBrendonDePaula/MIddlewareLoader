@@ -80,6 +80,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/nexga/Documents/GitHub/tcc/Middleware/MiddlewareLoader/c++/MiddlewareLoader/Async/ClientTcp.cpp">
+			<Option target="MiddlewareLoader"/>
+		</Unit>
+		<Unit filename="C:/Users/nexga/Documents/GitHub/tcc/Middleware/MiddlewareLoader/c++/MiddlewareLoader/Async/ClientTcp.h">
+			<Option target="MiddlewareLoader"/>
+		</Unit>
 		<Unit filename="C:/Users/nexga/Documents/GitHub/tcc/Middleware/MiddlewareLoader/c++/MiddlewareLoader/Async/ServerTcp.cpp">
 			<Option target="MiddlewareLoader"/>
 		</Unit>
