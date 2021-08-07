@@ -61,6 +61,18 @@ ErrorMessage ClientTcp::connect_(std::string ip, int port,int defaultbuffersize,
     }
     this->connected = true;
     this->loopThread = std::thread(ClientTcp::loopFunction,this);
+
+    std::map<std::string,void*> Args;
+    Args["Client"]          = this;
+    Args["Buffer"]          = NULL;
+    Args["ErrorMessage"]    = &Err;
+
+    for(auto event:this->events[(int)EventTypes::Connected]){
+        if( event.ClientMain!=NULL) {
+            event.ClientMain(Args);
+        }
+    }
+
     if(detach) {
         this->loopThread.detach();
     }
@@ -112,6 +124,11 @@ ErrorMessage ClientTcp::sendBuffer(Buffer data) {
         return Err;
     }
     return Err;
+}
+
+void ClientTcp::disconnect() {
+    this->connected = false;
+    closesocket(this->_socket);
 }
 
 void ClientTcp::loopFunction(ClientTcp *Client) {

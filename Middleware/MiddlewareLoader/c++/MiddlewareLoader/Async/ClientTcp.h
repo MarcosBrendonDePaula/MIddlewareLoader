@@ -55,6 +55,8 @@ public:
     void setDefaultbuffersize(int defaultbuffersize);
 
     ErrorMessage sendBuffer(Buffer data);
+
+    void disconnect();
 };
 
 

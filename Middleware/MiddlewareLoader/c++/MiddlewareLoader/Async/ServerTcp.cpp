@@ -97,6 +97,22 @@ void ServerClient::Start() {
     this->loopThread    = std::thread(this->loopFunction,this);
     this->connected     = true;
     this->loopThread.detach();
+
+    ErrorMessage Err;
+    Err.code        = ErrorCodes::NoError;
+    Err.description = "OK";
+
+    std::map<std::string,void*> Args;
+    Args["Client"]          = this;
+    Args["Buffer"]          = NULL;
+    Args["ErrorMessage"]    = &Err;
+
+    for(auto event:this->events[(int)EventTypes::Connected]){
+        if( event.ServerMain!=NULL) {
+            event.ServerMain(Args);
+        }
+    }
+
 }
 
 ServerTcp *ServerClient::getFather() const {
@@ -162,6 +178,11 @@ const std::vector<std::vector<MiddlewareModule>> &ServerClient::getEvents() cons
 
 void ServerClient::setEvents(std::vector<std::vector<MiddlewareModule>> &events) {
     ServerClient::events = events;
+}
+
+void ServerClient::disconnect() {
+    this->connected = false;
+    closesocket(this->_socket);
 }
 
 ErrorMessage ServerClient::sendBuffer(Buffer data) {

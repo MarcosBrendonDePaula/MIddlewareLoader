@@ -11,8 +11,8 @@ int main() {
     ServerTcp sv(25565,-1);
 
     ClientTcp cli;
-    cli.Use(SimpleMiddleware::RESPONSECliente,EventTypes::Received,5);
-    cli.connect_("127.0.0.1",25565,1500,false);
+    cli.Use(SimpleMiddleware::RESPONSE,EventTypes::Received,5);
+    std::cout<<cli.connect_("127.0.0.1",25565,1500,false).code<<std::endl;
     /**
      * Registro de Eventos.
      * Modulo,EventType,prioridade,

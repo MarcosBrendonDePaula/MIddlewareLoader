@@ -49,6 +49,7 @@ private:
 
 public:
 
+    void disconnect();
 
     ServerClient();
 

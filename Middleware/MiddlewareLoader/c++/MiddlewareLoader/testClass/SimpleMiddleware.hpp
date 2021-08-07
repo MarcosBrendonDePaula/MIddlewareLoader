@@ -10,44 +10,41 @@
 
 namespace SimpleMiddleware {
     using namespace std;
-    void Main(std::map<std::string, void *> & Args){
-        /*
+    /*
+     * SERVER:
         Default Args;
         ArgName-----------------CastingType---------
         Args["Server"]          type: ServerTcp*
         Args["Client"]          type: ServerClient*
         Args["Buffer"]          type: Buffer*
         Args["ErrorMessage"]    type: ErrorMessage*
-        --------------------------------------------
-        */
+    --------------------------------------------
+    */
+    /*
+     * CLIENT:
+        Default Args;
+        ArgName-----------------CastingType---------
+        Args["Client"]          type: ClientTcp*
+        Args["Buffer"]          type: Buffer*
+        Args["ErrorMessage"]    type: ErrorMessage*
+    --------------------------------------------
+    */
+
+
+
+
+    void Main(std::map<std::string, void *> & Args){
         cout<<"alguem conectou!"<<endl;
     }
 
     void Main1(std::map<std::string, void *> & Args){
-        /*
-        Default Args;
-        ArgName-----------------CastingType---------
-        Args["Server"]          type: ServerTcp*
-        Args["Client"]          type: ServerClient*
-        Args["Buffer"]          type: Buffer*
-        Args["ErrorMessage"]    type: ErrorMessage*
-        --------------------------------------------
-        */
         cout<<"Response"<<endl;
         Buffer *res = (Buffer*)Args["Buffer"];
 
     }
 
+
     void MainCliente(std::map<std::string, void *> & Args){
-        /*
-        Default Args;
-        ArgName-----------------CastingType---------
-        Args["Server"]          type: ServerTcp*
-        Args["Client"]          type: ServerClient*
-        Args["Buffer"]          type: Buffer*
-        Args["ErrorMessage"]    type: ErrorMessage*
-        --------------------------------------------
-        */
         cout<<"Response"<<endl;
         Buffer *res = (Buffer*)Args["Buffer"];
         ClientTcp *cli = (ClientTcp*)Args["Client"];
@@ -58,20 +55,10 @@ namespace SimpleMiddleware {
     //Função necessaria para remover instancias criadas e passadas a outros middlewares
     //caso não exista as instancias ficaram ocupando memoria
     void RemoveCustomArgs(std::map<std::string, void *> & Args) {
-        /*
-        Default Args;
-        ArgName-----------------CastingType---------
-        Args["Server"]          type: ServerTcp*
-        Args["Client"]          type: ServerClient*
-        Args["Buffer"]          type: Buffer*
-        Args["ErrorMessage"]    type: ErrorMessage*
-        --------------------------------------------
-        */
         cout<<"Removendo CustomArgs"<<endl;
     }
 
     MiddlewareModule CONNECT(Main,NULL);
-    MiddlewareModule RESPONSE(Main1,NULL);
-    MiddlewareModule RESPONSECliente(NULL,MainCliente);
+    MiddlewareModule RESPONSE(Main1,MainCliente);
     MiddlewareModule REMOVEARGS(RemoveCustomArgs,NULL);
 }
