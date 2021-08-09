@@ -12,7 +12,7 @@ public:
     /**
      * Default Args ServerMode List;
      * TEXT:TYPE
-     * Server:(ServerTcp*)
+     * Server:(AsyncServer*)
      * Client:(ServerClient*)
      */
     MiddlewareModule(void (*ServerMain)(std::map<std::string, void *> &Args) = NULL, void (*ClientMain)(std::map<std::string, void *> &)= NULL );

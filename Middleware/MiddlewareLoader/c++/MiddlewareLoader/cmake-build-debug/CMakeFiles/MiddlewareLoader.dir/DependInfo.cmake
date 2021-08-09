@@ -4,13 +4,15 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "C:/Users/nexga/Documents/GitHub/tcc/Middleware/MiddlewareLoader/c++/MiddlewareLoader/Async/ClientTcp.cpp" "C:/Users/nexga/Documents/GitHub/tcc/Middleware/MiddlewareLoader/c++/MiddlewareLoader/cmake-build-debug/CMakeFiles/MiddlewareLoader.dir/Async/ClientTcp.cpp.obj"
-  "C:/Users/nexga/Documents/GitHub/tcc/Middleware/MiddlewareLoader/c++/MiddlewareLoader/Async/ServerTcp.cpp" "C:/Users/nexga/Documents/GitHub/tcc/Middleware/MiddlewareLoader/c++/MiddlewareLoader/cmake-build-debug/CMakeFiles/MiddlewareLoader.dir/Async/ServerTcp.cpp.obj"
   "C:/Users/nexga/Documents/GitHub/tcc/Middleware/MiddlewareLoader/c++/MiddlewareLoader/Buffer.cpp" "C:/Users/nexga/Documents/GitHub/tcc/Middleware/MiddlewareLoader/c++/MiddlewareLoader/cmake-build-debug/CMakeFiles/MiddlewareLoader.dir/Buffer.cpp.obj"
   "C:/Users/nexga/Documents/GitHub/tcc/Middleware/MiddlewareLoader/c++/MiddlewareLoader/ErrorMessage.cpp" "C:/Users/nexga/Documents/GitHub/tcc/Middleware/MiddlewareLoader/c++/MiddlewareLoader/cmake-build-debug/CMakeFiles/MiddlewareLoader.dir/ErrorMessage.cpp.obj"
   "C:/Users/nexga/Documents/GitHub/tcc/Middleware/MiddlewareLoader/c++/MiddlewareLoader/EventTypes.cpp" "C:/Users/nexga/Documents/GitHub/tcc/Middleware/MiddlewareLoader/c++/MiddlewareLoader/cmake-build-debug/CMakeFiles/MiddlewareLoader.dir/EventTypes.cpp.obj"
   "C:/Users/nexga/Documents/GitHub/tcc/Middleware/MiddlewareLoader/c++/MiddlewareLoader/MiddlewareModule.cpp" "C:/Users/nexga/Documents/GitHub/tcc/Middleware/MiddlewareLoader/c++/MiddlewareLoader/cmake-build-debug/CMakeFiles/MiddlewareLoader.dir/MiddlewareModule.cpp.obj"
   "C:/Users/nexga/Documents/GitHub/tcc/Middleware/MiddlewareLoader/c++/MiddlewareLoader/Socket.cpp" "C:/Users/nexga/Documents/GitHub/tcc/Middleware/MiddlewareLoader/c++/MiddlewareLoader/cmake-build-debug/CMakeFiles/MiddlewareLoader.dir/Socket.cpp.obj"
+  "C:/Users/nexga/Documents/GitHub/tcc/Middleware/MiddlewareLoader/c++/MiddlewareLoader/Tcp/AsyncClient.cpp" "C:/Users/nexga/Documents/GitHub/tcc/Middleware/MiddlewareLoader/c++/MiddlewareLoader/cmake-build-debug/CMakeFiles/MiddlewareLoader.dir/Tcp/AsyncClient.cpp.obj"
+  "C:/Users/nexga/Documents/GitHub/tcc/Middleware/MiddlewareLoader/c++/MiddlewareLoader/Tcp/AsyncServer.cpp" "C:/Users/nexga/Documents/GitHub/tcc/Middleware/MiddlewareLoader/c++/MiddlewareLoader/cmake-build-debug/CMakeFiles/MiddlewareLoader.dir/Tcp/AsyncServer.cpp.obj"
+  "C:/Users/nexga/Documents/GitHub/tcc/Middleware/MiddlewareLoader/c++/MiddlewareLoader/Tcp/SyncClient.cpp" "C:/Users/nexga/Documents/GitHub/tcc/Middleware/MiddlewareLoader/c++/MiddlewareLoader/cmake-build-debug/CMakeFiles/MiddlewareLoader.dir/Tcp/SyncClient.cpp.obj"
+  "C:/Users/nexga/Documents/GitHub/tcc/Middleware/MiddlewareLoader/c++/MiddlewareLoader/Utility.cpp" "C:/Users/nexga/Documents/GitHub/tcc/Middleware/MiddlewareLoader/c++/MiddlewareLoader/cmake-build-debug/CMakeFiles/MiddlewareLoader.dir/Utility.cpp.obj"
   "C:/Users/nexga/Documents/GitHub/tcc/Middleware/MiddlewareLoader/c++/MiddlewareLoader/main.cpp" "C:/Users/nexga/Documents/GitHub/tcc/Middleware/MiddlewareLoader/c++/MiddlewareLoader/cmake-build-debug/CMakeFiles/MiddlewareLoader.dir/main.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

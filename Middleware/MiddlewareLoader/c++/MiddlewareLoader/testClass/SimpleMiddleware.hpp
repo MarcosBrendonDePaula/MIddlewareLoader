@@ -3,8 +3,8 @@
 //
 #pragma once
 #include "../MiddlewareModule.h"
-#include "../Async/ServerTcp.h"
-#include "../Async/ClientTcp.h"
+#include "../Tcp/AsyncServer.h"
+#include "../Tcp/AsyncClient.h"
 #include <map>
 #include <iostream>
 
@@ -14,17 +14,18 @@ namespace SimpleMiddleware {
      * SERVER:
         Default Args;
         ArgName-----------------CastingType---------
-        Args["Server"]          type: ServerTcp*
-        Args["Client"]          type: ServerClient*
+        Args["Server"]          type: AsyncServer*
+        Args["Client"]          type: AsyncServerClient*
         Args["Buffer"]          type: Buffer*
         Args["ErrorMessage"]    type: ErrorMessage*
     --------------------------------------------
     */
+
     /*
      * CLIENT:
         Default Args;
         ArgName-----------------CastingType---------
-        Args["Client"]          type: ClientTcp*
+        Args["Client"]          type: AsyncClient*
         Args["Buffer"]          type: Buffer*
         Args["ErrorMessage"]    type: ErrorMessage*
     --------------------------------------------
@@ -47,7 +48,7 @@ namespace SimpleMiddleware {
     void MainCliente(std::map<std::string, void *> & Args){
         cout<<"Response"<<endl;
         Buffer *res = (Buffer*)Args["Buffer"];
-        ClientTcp *cli = (ClientTcp*)Args["Client"];
+        AsyncClient *cli = (AsyncClient*)Args["Client"];
         cout<<"Buffer: "<<res->toString()<<endl;
         cli->sendBuffer(Buffer("OK"));
     }

@@ -141,60 +141,6 @@ MiddlewareLoader/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\MiddlewareLoader.dir\build.make CMakeFiles/MiddlewareLoader.dir/build
 .PHONY : MiddlewareLoader/fast
 
-Async/ClientTcp.obj: Async/ClientTcp.cpp.obj
-
-.PHONY : Async/ClientTcp.obj
-
-# target to build an object file
-Async/ClientTcp.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MiddlewareLoader.dir\build.make CMakeFiles/MiddlewareLoader.dir/Async/ClientTcp.cpp.obj
-.PHONY : Async/ClientTcp.cpp.obj
-
-Async/ClientTcp.i: Async/ClientTcp.cpp.i
-
-.PHONY : Async/ClientTcp.i
-
-# target to preprocess a source file
-Async/ClientTcp.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MiddlewareLoader.dir\build.make CMakeFiles/MiddlewareLoader.dir/Async/ClientTcp.cpp.i
-.PHONY : Async/ClientTcp.cpp.i
-
-Async/ClientTcp.s: Async/ClientTcp.cpp.s
-
-.PHONY : Async/ClientTcp.s
-
-# target to generate assembly for a file
-Async/ClientTcp.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MiddlewareLoader.dir\build.make CMakeFiles/MiddlewareLoader.dir/Async/ClientTcp.cpp.s
-.PHONY : Async/ClientTcp.cpp.s
-
-Async/ServerTcp.obj: Async/ServerTcp.cpp.obj
-
-.PHONY : Async/ServerTcp.obj
-
-# target to build an object file
-Async/ServerTcp.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MiddlewareLoader.dir\build.make CMakeFiles/MiddlewareLoader.dir/Async/ServerTcp.cpp.obj
-.PHONY : Async/ServerTcp.cpp.obj
-
-Async/ServerTcp.i: Async/ServerTcp.cpp.i
-
-.PHONY : Async/ServerTcp.i
-
-# target to preprocess a source file
-Async/ServerTcp.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MiddlewareLoader.dir\build.make CMakeFiles/MiddlewareLoader.dir/Async/ServerTcp.cpp.i
-.PHONY : Async/ServerTcp.cpp.i
-
-Async/ServerTcp.s: Async/ServerTcp.cpp.s
-
-.PHONY : Async/ServerTcp.s
-
-# target to generate assembly for a file
-Async/ServerTcp.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MiddlewareLoader.dir\build.make CMakeFiles/MiddlewareLoader.dir/Async/ServerTcp.cpp.s
-.PHONY : Async/ServerTcp.cpp.s
-
 Buffer.obj: Buffer.cpp.obj
 
 .PHONY : Buffer.obj
@@ -330,6 +276,114 @@ Socket.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\MiddlewareLoader.dir\build.make CMakeFiles/MiddlewareLoader.dir/Socket.cpp.s
 .PHONY : Socket.cpp.s
 
+Tcp/AsyncClient.obj: Tcp/AsyncClient.cpp.obj
+
+.PHONY : Tcp/AsyncClient.obj
+
+# target to build an object file
+Tcp/AsyncClient.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MiddlewareLoader.dir\build.make CMakeFiles/MiddlewareLoader.dir/Tcp/AsyncClient.cpp.obj
+.PHONY : Tcp/AsyncClient.cpp.obj
+
+Tcp/AsyncClient.i: Tcp/AsyncClient.cpp.i
+
+.PHONY : Tcp/AsyncClient.i
+
+# target to preprocess a source file
+Tcp/AsyncClient.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MiddlewareLoader.dir\build.make CMakeFiles/MiddlewareLoader.dir/Tcp/AsyncClient.cpp.i
+.PHONY : Tcp/AsyncClient.cpp.i
+
+Tcp/AsyncClient.s: Tcp/AsyncClient.cpp.s
+
+.PHONY : Tcp/AsyncClient.s
+
+# target to generate assembly for a file
+Tcp/AsyncClient.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MiddlewareLoader.dir\build.make CMakeFiles/MiddlewareLoader.dir/Tcp/AsyncClient.cpp.s
+.PHONY : Tcp/AsyncClient.cpp.s
+
+Tcp/AsyncServer.obj: Tcp/AsyncServer.cpp.obj
+
+.PHONY : Tcp/AsyncServer.obj
+
+# target to build an object file
+Tcp/AsyncServer.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MiddlewareLoader.dir\build.make CMakeFiles/MiddlewareLoader.dir/Tcp/AsyncServer.cpp.obj
+.PHONY : Tcp/AsyncServer.cpp.obj
+
+Tcp/AsyncServer.i: Tcp/AsyncServer.cpp.i
+
+.PHONY : Tcp/AsyncServer.i
+
+# target to preprocess a source file
+Tcp/AsyncServer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MiddlewareLoader.dir\build.make CMakeFiles/MiddlewareLoader.dir/Tcp/AsyncServer.cpp.i
+.PHONY : Tcp/AsyncServer.cpp.i
+
+Tcp/AsyncServer.s: Tcp/AsyncServer.cpp.s
+
+.PHONY : Tcp/AsyncServer.s
+
+# target to generate assembly for a file
+Tcp/AsyncServer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MiddlewareLoader.dir\build.make CMakeFiles/MiddlewareLoader.dir/Tcp/AsyncServer.cpp.s
+.PHONY : Tcp/AsyncServer.cpp.s
+
+Tcp/SyncClient.obj: Tcp/SyncClient.cpp.obj
+
+.PHONY : Tcp/SyncClient.obj
+
+# target to build an object file
+Tcp/SyncClient.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MiddlewareLoader.dir\build.make CMakeFiles/MiddlewareLoader.dir/Tcp/SyncClient.cpp.obj
+.PHONY : Tcp/SyncClient.cpp.obj
+
+Tcp/SyncClient.i: Tcp/SyncClient.cpp.i
+
+.PHONY : Tcp/SyncClient.i
+
+# target to preprocess a source file
+Tcp/SyncClient.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MiddlewareLoader.dir\build.make CMakeFiles/MiddlewareLoader.dir/Tcp/SyncClient.cpp.i
+.PHONY : Tcp/SyncClient.cpp.i
+
+Tcp/SyncClient.s: Tcp/SyncClient.cpp.s
+
+.PHONY : Tcp/SyncClient.s
+
+# target to generate assembly for a file
+Tcp/SyncClient.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MiddlewareLoader.dir\build.make CMakeFiles/MiddlewareLoader.dir/Tcp/SyncClient.cpp.s
+.PHONY : Tcp/SyncClient.cpp.s
+
+Utility.obj: Utility.cpp.obj
+
+.PHONY : Utility.obj
+
+# target to build an object file
+Utility.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MiddlewareLoader.dir\build.make CMakeFiles/MiddlewareLoader.dir/Utility.cpp.obj
+.PHONY : Utility.cpp.obj
+
+Utility.i: Utility.cpp.i
+
+.PHONY : Utility.i
+
+# target to preprocess a source file
+Utility.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MiddlewareLoader.dir\build.make CMakeFiles/MiddlewareLoader.dir/Utility.cpp.i
+.PHONY : Utility.cpp.i
+
+Utility.s: Utility.cpp.s
+
+.PHONY : Utility.s
+
+# target to generate assembly for a file
+Utility.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MiddlewareLoader.dir\build.make CMakeFiles/MiddlewareLoader.dir/Utility.cpp.s
+.PHONY : Utility.cpp.s
+
 main.obj: main.cpp.obj
 
 .PHONY : main.obj
@@ -366,12 +420,6 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... MiddlewareLoader
-	@echo ... Async/ClientTcp.obj
-	@echo ... Async/ClientTcp.i
-	@echo ... Async/ClientTcp.s
-	@echo ... Async/ServerTcp.obj
-	@echo ... Async/ServerTcp.i
-	@echo ... Async/ServerTcp.s
 	@echo ... Buffer.obj
 	@echo ... Buffer.i
 	@echo ... Buffer.s
@@ -387,6 +435,18 @@ help:
 	@echo ... Socket.obj
 	@echo ... Socket.i
 	@echo ... Socket.s
+	@echo ... Tcp/AsyncClient.obj
+	@echo ... Tcp/AsyncClient.i
+	@echo ... Tcp/AsyncClient.s
+	@echo ... Tcp/AsyncServer.obj
+	@echo ... Tcp/AsyncServer.i
+	@echo ... Tcp/AsyncServer.s
+	@echo ... Tcp/SyncClient.obj
+	@echo ... Tcp/SyncClient.i
+	@echo ... Tcp/SyncClient.s
+	@echo ... Utility.obj
+	@echo ... Utility.i
+	@echo ... Utility.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

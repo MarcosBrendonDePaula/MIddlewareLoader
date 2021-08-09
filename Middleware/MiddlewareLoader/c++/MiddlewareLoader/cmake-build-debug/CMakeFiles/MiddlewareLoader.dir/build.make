@@ -153,31 +153,57 @@ CMakeFiles/MiddlewareLoader.dir/Buffer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MiddlewareLoader.dir/Buffer.cpp.s"
 	C:\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\nexga\Documents\GitHub\tcc\Middleware\MiddlewareLoader\c++\MiddlewareLoader\Buffer.cpp -o CMakeFiles\MiddlewareLoader.dir\Buffer.cpp.s
 
-CMakeFiles/MiddlewareLoader.dir/Async/ServerTcp.cpp.obj: CMakeFiles/MiddlewareLoader.dir/flags.make
-CMakeFiles/MiddlewareLoader.dir/Async/ServerTcp.cpp.obj: ../Async/ServerTcp.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\nexga\Documents\GitHub\tcc\Middleware\MiddlewareLoader\c++\MiddlewareLoader\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/MiddlewareLoader.dir/Async/ServerTcp.cpp.obj"
-	C:\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\MiddlewareLoader.dir\Async\ServerTcp.cpp.obj -c C:\Users\nexga\Documents\GitHub\tcc\Middleware\MiddlewareLoader\c++\MiddlewareLoader\Async\ServerTcp.cpp
+CMakeFiles/MiddlewareLoader.dir/Tcp/AsyncServer.cpp.obj: CMakeFiles/MiddlewareLoader.dir/flags.make
+CMakeFiles/MiddlewareLoader.dir/Tcp/AsyncServer.cpp.obj: ../Tcp/AsyncServer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\nexga\Documents\GitHub\tcc\Middleware\MiddlewareLoader\c++\MiddlewareLoader\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/MiddlewareLoader.dir/Tcp/AsyncServer.cpp.obj"
+	C:\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\MiddlewareLoader.dir\Tcp\AsyncServer.cpp.obj -c C:\Users\nexga\Documents\GitHub\tcc\Middleware\MiddlewareLoader\c++\MiddlewareLoader\Tcp\AsyncServer.cpp
 
-CMakeFiles/MiddlewareLoader.dir/Async/ServerTcp.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MiddlewareLoader.dir/Async/ServerTcp.cpp.i"
-	C:\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\nexga\Documents\GitHub\tcc\Middleware\MiddlewareLoader\c++\MiddlewareLoader\Async\ServerTcp.cpp > CMakeFiles\MiddlewareLoader.dir\Async\ServerTcp.cpp.i
+CMakeFiles/MiddlewareLoader.dir/Tcp/AsyncServer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MiddlewareLoader.dir/Tcp/AsyncServer.cpp.i"
+	C:\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\nexga\Documents\GitHub\tcc\Middleware\MiddlewareLoader\c++\MiddlewareLoader\Tcp\AsyncServer.cpp > CMakeFiles\MiddlewareLoader.dir\Tcp\AsyncServer.cpp.i
 
-CMakeFiles/MiddlewareLoader.dir/Async/ServerTcp.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MiddlewareLoader.dir/Async/ServerTcp.cpp.s"
-	C:\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\nexga\Documents\GitHub\tcc\Middleware\MiddlewareLoader\c++\MiddlewareLoader\Async\ServerTcp.cpp -o CMakeFiles\MiddlewareLoader.dir\Async\ServerTcp.cpp.s
+CMakeFiles/MiddlewareLoader.dir/Tcp/AsyncServer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MiddlewareLoader.dir/Tcp/AsyncServer.cpp.s"
+	C:\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\nexga\Documents\GitHub\tcc\Middleware\MiddlewareLoader\c++\MiddlewareLoader\Tcp\AsyncServer.cpp -o CMakeFiles\MiddlewareLoader.dir\Tcp\AsyncServer.cpp.s
 
-CMakeFiles/MiddlewareLoader.dir/Async/ClientTcp.cpp.obj: CMakeFiles/MiddlewareLoader.dir/flags.make
-CMakeFiles/MiddlewareLoader.dir/Async/ClientTcp.cpp.obj: ../Async/ClientTcp.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\nexga\Documents\GitHub\tcc\Middleware\MiddlewareLoader\c++\MiddlewareLoader\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/MiddlewareLoader.dir/Async/ClientTcp.cpp.obj"
-	C:\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\MiddlewareLoader.dir\Async\ClientTcp.cpp.obj -c C:\Users\nexga\Documents\GitHub\tcc\Middleware\MiddlewareLoader\c++\MiddlewareLoader\Async\ClientTcp.cpp
+CMakeFiles/MiddlewareLoader.dir/Tcp/AsyncClient.cpp.obj: CMakeFiles/MiddlewareLoader.dir/flags.make
+CMakeFiles/MiddlewareLoader.dir/Tcp/AsyncClient.cpp.obj: ../Tcp/AsyncClient.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\nexga\Documents\GitHub\tcc\Middleware\MiddlewareLoader\c++\MiddlewareLoader\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/MiddlewareLoader.dir/Tcp/AsyncClient.cpp.obj"
+	C:\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\MiddlewareLoader.dir\Tcp\AsyncClient.cpp.obj -c C:\Users\nexga\Documents\GitHub\tcc\Middleware\MiddlewareLoader\c++\MiddlewareLoader\Tcp\AsyncClient.cpp
 
-CMakeFiles/MiddlewareLoader.dir/Async/ClientTcp.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MiddlewareLoader.dir/Async/ClientTcp.cpp.i"
-	C:\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\nexga\Documents\GitHub\tcc\Middleware\MiddlewareLoader\c++\MiddlewareLoader\Async\ClientTcp.cpp > CMakeFiles\MiddlewareLoader.dir\Async\ClientTcp.cpp.i
+CMakeFiles/MiddlewareLoader.dir/Tcp/AsyncClient.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MiddlewareLoader.dir/Tcp/AsyncClient.cpp.i"
+	C:\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\nexga\Documents\GitHub\tcc\Middleware\MiddlewareLoader\c++\MiddlewareLoader\Tcp\AsyncClient.cpp > CMakeFiles\MiddlewareLoader.dir\Tcp\AsyncClient.cpp.i
 
-CMakeFiles/MiddlewareLoader.dir/Async/ClientTcp.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MiddlewareLoader.dir/Async/ClientTcp.cpp.s"
-	C:\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\nexga\Documents\GitHub\tcc\Middleware\MiddlewareLoader\c++\MiddlewareLoader\Async\ClientTcp.cpp -o CMakeFiles\MiddlewareLoader.dir\Async\ClientTcp.cpp.s
+CMakeFiles/MiddlewareLoader.dir/Tcp/AsyncClient.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MiddlewareLoader.dir/Tcp/AsyncClient.cpp.s"
+	C:\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\nexga\Documents\GitHub\tcc\Middleware\MiddlewareLoader\c++\MiddlewareLoader\Tcp\AsyncClient.cpp -o CMakeFiles\MiddlewareLoader.dir\Tcp\AsyncClient.cpp.s
+
+CMakeFiles/MiddlewareLoader.dir/Utility.cpp.obj: CMakeFiles/MiddlewareLoader.dir/flags.make
+CMakeFiles/MiddlewareLoader.dir/Utility.cpp.obj: ../Utility.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\nexga\Documents\GitHub\tcc\Middleware\MiddlewareLoader\c++\MiddlewareLoader\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/MiddlewareLoader.dir/Utility.cpp.obj"
+	C:\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\MiddlewareLoader.dir\Utility.cpp.obj -c C:\Users\nexga\Documents\GitHub\tcc\Middleware\MiddlewareLoader\c++\MiddlewareLoader\Utility.cpp
+
+CMakeFiles/MiddlewareLoader.dir/Utility.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MiddlewareLoader.dir/Utility.cpp.i"
+	C:\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\nexga\Documents\GitHub\tcc\Middleware\MiddlewareLoader\c++\MiddlewareLoader\Utility.cpp > CMakeFiles\MiddlewareLoader.dir\Utility.cpp.i
+
+CMakeFiles/MiddlewareLoader.dir/Utility.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MiddlewareLoader.dir/Utility.cpp.s"
+	C:\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\nexga\Documents\GitHub\tcc\Middleware\MiddlewareLoader\c++\MiddlewareLoader\Utility.cpp -o CMakeFiles\MiddlewareLoader.dir\Utility.cpp.s
+
+CMakeFiles/MiddlewareLoader.dir/Tcp/SyncClient.cpp.obj: CMakeFiles/MiddlewareLoader.dir/flags.make
+CMakeFiles/MiddlewareLoader.dir/Tcp/SyncClient.cpp.obj: ../Tcp/SyncClient.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\nexga\Documents\GitHub\tcc\Middleware\MiddlewareLoader\c++\MiddlewareLoader\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/MiddlewareLoader.dir/Tcp/SyncClient.cpp.obj"
+	C:\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\MiddlewareLoader.dir\Tcp\SyncClient.cpp.obj -c C:\Users\nexga\Documents\GitHub\tcc\Middleware\MiddlewareLoader\c++\MiddlewareLoader\Tcp\SyncClient.cpp
+
+CMakeFiles/MiddlewareLoader.dir/Tcp/SyncClient.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MiddlewareLoader.dir/Tcp/SyncClient.cpp.i"
+	C:\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\nexga\Documents\GitHub\tcc\Middleware\MiddlewareLoader\c++\MiddlewareLoader\Tcp\SyncClient.cpp > CMakeFiles\MiddlewareLoader.dir\Tcp\SyncClient.cpp.i
+
+CMakeFiles/MiddlewareLoader.dir/Tcp/SyncClient.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MiddlewareLoader.dir/Tcp/SyncClient.cpp.s"
+	C:\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\nexga\Documents\GitHub\tcc\Middleware\MiddlewareLoader\c++\MiddlewareLoader\Tcp\SyncClient.cpp -o CMakeFiles\MiddlewareLoader.dir\Tcp\SyncClient.cpp.s
 
 # Object files for target MiddlewareLoader
 MiddlewareLoader_OBJECTS = \
@@ -187,8 +213,10 @@ MiddlewareLoader_OBJECTS = \
 "CMakeFiles/MiddlewareLoader.dir/ErrorMessage.cpp.obj" \
 "CMakeFiles/MiddlewareLoader.dir/EventTypes.cpp.obj" \
 "CMakeFiles/MiddlewareLoader.dir/Buffer.cpp.obj" \
-"CMakeFiles/MiddlewareLoader.dir/Async/ServerTcp.cpp.obj" \
-"CMakeFiles/MiddlewareLoader.dir/Async/ClientTcp.cpp.obj"
+"CMakeFiles/MiddlewareLoader.dir/Tcp/AsyncServer.cpp.obj" \
+"CMakeFiles/MiddlewareLoader.dir/Tcp/AsyncClient.cpp.obj" \
+"CMakeFiles/MiddlewareLoader.dir/Utility.cpp.obj" \
+"CMakeFiles/MiddlewareLoader.dir/Tcp/SyncClient.cpp.obj"
 
 # External object files for target MiddlewareLoader
 MiddlewareLoader_EXTERNAL_OBJECTS =
@@ -199,13 +227,15 @@ MiddlewareLoader.exe: CMakeFiles/MiddlewareLoader.dir/MiddlewareModule.cpp.obj
 MiddlewareLoader.exe: CMakeFiles/MiddlewareLoader.dir/ErrorMessage.cpp.obj
 MiddlewareLoader.exe: CMakeFiles/MiddlewareLoader.dir/EventTypes.cpp.obj
 MiddlewareLoader.exe: CMakeFiles/MiddlewareLoader.dir/Buffer.cpp.obj
-MiddlewareLoader.exe: CMakeFiles/MiddlewareLoader.dir/Async/ServerTcp.cpp.obj
-MiddlewareLoader.exe: CMakeFiles/MiddlewareLoader.dir/Async/ClientTcp.cpp.obj
+MiddlewareLoader.exe: CMakeFiles/MiddlewareLoader.dir/Tcp/AsyncServer.cpp.obj
+MiddlewareLoader.exe: CMakeFiles/MiddlewareLoader.dir/Tcp/AsyncClient.cpp.obj
+MiddlewareLoader.exe: CMakeFiles/MiddlewareLoader.dir/Utility.cpp.obj
+MiddlewareLoader.exe: CMakeFiles/MiddlewareLoader.dir/Tcp/SyncClient.cpp.obj
 MiddlewareLoader.exe: CMakeFiles/MiddlewareLoader.dir/build.make
 MiddlewareLoader.exe: CMakeFiles/MiddlewareLoader.dir/linklibs.rsp
 MiddlewareLoader.exe: CMakeFiles/MiddlewareLoader.dir/objects1.rsp
 MiddlewareLoader.exe: CMakeFiles/MiddlewareLoader.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\nexga\Documents\GitHub\tcc\Middleware\MiddlewareLoader\c++\MiddlewareLoader\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable MiddlewareLoader.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\nexga\Documents\GitHub\tcc\Middleware\MiddlewareLoader\c++\MiddlewareLoader\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable MiddlewareLoader.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\MiddlewareLoader.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

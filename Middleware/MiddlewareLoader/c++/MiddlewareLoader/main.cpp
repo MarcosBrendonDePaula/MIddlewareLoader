@@ -1,6 +1,6 @@
 #include <iostream>
-#include "./Async/ServerTcp.h"
-#include "./Async/ClientTcp.h"
+#include "./Tcp/AsyncServer.h"
+#include "./Tcp/AsyncClient.h"
 #include "./testClass/SimpleMiddleware.hpp"
 
 int main() {
@@ -8,11 +8,11 @@ int main() {
     /**
      * Servidor Middleware
      */
-    ServerTcp sv(25565,-1);
+    AsyncServer sv(25565,-1);
 
-    ClientTcp cli;
+    AsyncClient cli;
     cli.Use(SimpleMiddleware::RESPONSE,EventTypes::Received,5);
-    std::cout<<cli.connect_("127.0.0.1",25565,1500,false).code<<std::endl;
+    std::cout<<cli.connect_("127.0.0.1",25565,1500,false).description<<std::endl;
     /**
      * Registro de Eventos.
      * Modulo,EventType,prioridade,
