@@ -20,10 +20,6 @@ iostream
 
 C:/Users/nexga/Documents/GitHub/tcc/Middleware/MiddlewareLoader/c++/MiddlewareLoader/EventTypes.h
 
-C:/Users/nexga/Documents/GitHub/tcc/Middleware/MiddlewareLoader/c++/MiddlewareLoader/MiddlewareModule.cpp
-MiddlewareModule.h
-C:/Users/nexga/Documents/GitHub/tcc/Middleware/MiddlewareLoader/c++/MiddlewareLoader/MiddlewareModule.h
-
 C:/Users/nexga/Documents/GitHub/tcc/Middleware/MiddlewareLoader/c++/MiddlewareLoader/MiddlewareModule.h
 map
 -
@@ -36,10 +32,6 @@ winsock2.h
 cstring
 -
 
-C:/Users/nexga/Documents/GitHub/tcc/Middleware/MiddlewareLoader/c++/MiddlewareLoader/Tcp/AsyncClient.cpp
-AsyncClient.h
-C:/Users/nexga/Documents/GitHub/tcc/Middleware/MiddlewareLoader/c++/MiddlewareLoader/Tcp/AsyncClient.h
-
 C:/Users/nexga/Documents/GitHub/tcc/Middleware/MiddlewareLoader/c++/MiddlewareLoader/Tcp/AsyncClient.h
 ../Socket.h
 C:/Users/nexga/Documents/GitHub/tcc/Middleware/MiddlewareLoader/c++/MiddlewareLoader/Socket.h
@@ -59,10 +51,6 @@ vector
 -
 algorithm
 -
-
-C:/Users/nexga/Documents/GitHub/tcc/Middleware/MiddlewareLoader/c++/MiddlewareLoader/Tcp/AsyncServer.cpp
-AsyncServer.h
-C:/Users/nexga/Documents/GitHub/tcc/Middleware/MiddlewareLoader/c++/MiddlewareLoader/Tcp/AsyncServer.h
 
 C:/Users/nexga/Documents/GitHub/tcc/Middleware/MiddlewareLoader/c++/MiddlewareLoader/Tcp/AsyncServer.h
 ../Socket.h
@@ -85,10 +73,6 @@ algorithm
 -
 thread
 -
-
-C:/Users/nexga/Documents/GitHub/tcc/Middleware/MiddlewareLoader/c++/MiddlewareLoader/Tcp/SyncClient.cpp
-SyncClient.h
-C:/Users/nexga/Documents/GitHub/tcc/Middleware/MiddlewareLoader/c++/MiddlewareLoader/Tcp/SyncClient.h
 
 C:/Users/nexga/Documents/GitHub/tcc/Middleware/MiddlewareLoader/c++/MiddlewareLoader/Tcp/SyncClient.h
 ./AsyncClient.h
@@ -105,8 +89,8 @@ iostream
 -
 ./Tcp/AsyncServer.h
 C:/Users/nexga/Documents/GitHub/tcc/Middleware/MiddlewareLoader/c++/MiddlewareLoader/Tcp/AsyncServer.h
-./Tcp/AsyncClient.h
-C:/Users/nexga/Documents/GitHub/tcc/Middleware/MiddlewareLoader/c++/MiddlewareLoader/Tcp/AsyncClient.h
+./Tcp/SyncClient.h
+C:/Users/nexga/Documents/GitHub/tcc/Middleware/MiddlewareLoader/c++/MiddlewareLoader/Tcp/SyncClient.h
 ./testClass/SimpleMiddleware.hpp
 C:/Users/nexga/Documents/GitHub/tcc/Middleware/MiddlewareLoader/c++/MiddlewareLoader/testClass/SimpleMiddleware.hpp
 

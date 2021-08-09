@@ -17,12 +17,8 @@ private:
     bool connected;
 public:
     SyncClient();
-
     ErrorMessage connect_(std::string ip = "127.0.0.1",int port = 25565,int defaultbuffersize = 1500);
-
     Buffer recvBuffer();
-
-
 };
 
 

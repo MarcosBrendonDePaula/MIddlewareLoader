@@ -53,5 +53,6 @@ CMakeFiles/MiddlewareLoader.dir/main.cpp.obj
  C:/Users/nexga/Documents/GitHub/tcc/Middleware/MiddlewareLoader/c++/MiddlewareLoader/Socket.h
  C:/Users/nexga/Documents/GitHub/tcc/Middleware/MiddlewareLoader/c++/MiddlewareLoader/Tcp/AsyncClient.h
  C:/Users/nexga/Documents/GitHub/tcc/Middleware/MiddlewareLoader/c++/MiddlewareLoader/Tcp/AsyncServer.h
+ C:/Users/nexga/Documents/GitHub/tcc/Middleware/MiddlewareLoader/c++/MiddlewareLoader/Tcp/SyncClient.h
  C:/Users/nexga/Documents/GitHub/tcc/Middleware/MiddlewareLoader/c++/MiddlewareLoader/main.cpp
  C:/Users/nexga/Documents/GitHub/tcc/Middleware/MiddlewareLoader/c++/MiddlewareLoader/testClass/SimpleMiddleware.hpp
