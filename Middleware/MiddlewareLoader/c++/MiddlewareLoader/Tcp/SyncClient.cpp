@@ -36,3 +36,11 @@ Buffer SyncClient::recvBuffer() {
     buffer.setActualSize(recv(this->_socket,buffer[0],this->getDefaultbuffersize(),0));
     return buffer;
 }
+
+bool SyncClient::isConnected() const {
+    return connected;
+}
+
+void SyncClient::setConnected(bool connected) {
+    SyncClient::connected = connected;
+}

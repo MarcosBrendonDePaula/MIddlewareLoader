@@ -7,6 +7,10 @@ void AsyncServer::loopFunction(AsyncServer *Server) {
     while (Server->listening) {
         int clientDataLen = sizeof(Server->clients[Server->idCounter].sockData);
 
+        ErrorMessage Err;
+        Err.code        = ErrorCodes::NoError;
+        Err.description = "OK";
+
         Server->clients[Server->idCounter]._socket = accept(Server->_socket,(struct sockaddr*)&Server->sockData,&clientDataLen);
         Server->clients[Server->idCounter].setId(Server->idCounter);
         Server->clients[Server->idCounter].setFather(Server);
@@ -15,6 +19,10 @@ void AsyncServer::loopFunction(AsyncServer *Server) {
 
 
         std::map<std::string,void*> Args;
+        Args["Server"]          = Server;
+        Args["Client"]          = &Server->clients[Server->idCounter];
+        Args["Buffer"]          = NULL;
+        Args["ErrorMessage"]    = &Err;
 
         for(auto event : Server->events[(int)EventTypes::Connected]) {
             if(event.ServerMain!=NULL)

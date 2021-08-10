@@ -12,8 +12,14 @@ int main() {
 
     SyncClient cli;
     std::cout<<cli.connect_("127.0.0.1",25565,1500).description<<std::endl;
+    std::string input;
+    while(cli.isConnected()) {
+        std::cin>>input;
+        cli.sendBuffer(Buffer(input));
+        std::cout<<cli.recvBuffer().toString()<<std::endl;
+        cli.disconnect();
+    }
 
-    std::cout<<cli.recvBuffer().toString()<<std::endl;
 
     /**
      * Registro de Eventos.
