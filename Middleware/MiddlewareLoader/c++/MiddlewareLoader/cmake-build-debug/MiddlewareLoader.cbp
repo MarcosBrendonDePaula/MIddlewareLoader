@@ -137,9 +137,6 @@
 		<Unit filename="C:/Users/nexga/Documents/GitHub/tcc/Middleware/MiddlewareLoader/c++/MiddlewareLoader/main.cpp">
 			<Option target="MiddlewareLoader"/>
 		</Unit>
-		<Unit filename="C:/Users/nexga/Documents/GitHub/tcc/Middleware/MiddlewareLoader/c++/MiddlewareLoader/testClass/SimpleMiddleware.hpp">
-			<Option target="MiddlewareLoader"/>
-		</Unit>
 		<Unit filename="C:/Users/nexga/Documents/GitHub/tcc/Middleware/MiddlewareLoader/c++/MiddlewareLoader/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

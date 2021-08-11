@@ -54,5 +54,4 @@ CMakeFiles/MiddlewareLoader.dir/main.cpp.obj: ../Tcp/AsyncClient.h
 CMakeFiles/MiddlewareLoader.dir/main.cpp.obj: ../Tcp/AsyncServer.h
 CMakeFiles/MiddlewareLoader.dir/main.cpp.obj: ../Tcp/SyncClient.h
 CMakeFiles/MiddlewareLoader.dir/main.cpp.obj: ../main.cpp
-CMakeFiles/MiddlewareLoader.dir/main.cpp.obj: ../testClass/SimpleMiddleware.hpp
 

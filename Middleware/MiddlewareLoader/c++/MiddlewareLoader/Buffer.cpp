@@ -19,9 +19,9 @@ Buffer::Buffer(int maxSize) {
  */
 Buffer::Buffer(std::string str, int maxSize) {
     this->maxSize = maxSize;
-    this->data = std::vector<char>(maxSize,0x0);
+    this->data = std::vector<char>(maxSize);
+    std::copy(str.begin(), str.end(), this->data.begin());
     this->actualSize = str.size();
-    std::memcpy(&data[0],&str[0],this->actualSize);
 }
 std::string Buffer::toString() {
     return std::string(&this->data[0],this->actualSize);

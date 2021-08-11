@@ -10,11 +10,26 @@
 class MiddlewareModule {
 public:
     /**
-     * Default Args ServerMode List;
-     * TEXT:TYPE
-     * Server:(AsyncServer*)
-     * Client:(ServerClient*)
-     */
+     * SERVER:
+        Default Args;
+        ArgName-----------------CastingType---------
+        Args["Server"]          type: AsyncServer*
+        Args["Client"]          type: ServerClient*
+        Args["Buffer"]          type: Buffer*
+        Args["ErrorMessage"]    type: ErrorMessage*
+    --------------------------------------------
+    */
+
+    /**
+     * CLIENT:
+        Default Args;
+        ArgName-----------------CastingType---------
+        Args["Client"]          type: AsyncClient*
+        Args["Buffer"]          type: Buffer*
+        Args["ErrorMessage"]    type: ErrorMessage*
+    --------------------------------------------
+    */
+
     MiddlewareModule(void (*ServerMain)(std::map<std::string, void *> &Args) = NULL, void (*ClientMain)(std::map<std::string, void *> &)= NULL );
     void (*ServerMain)(std::map<std::string,void*>&) = NULL;
     void (*ClientMain)(std::map<std::string,void*>&) = NULL;

@@ -1,25 +1,22 @@
 #include <iostream>
 #include "./Tcp/AsyncServer.h"
 #include "./Tcp/SyncClient.h"
-#include "./testClass/SimpleMiddleware.hpp"
+
+void Connect(std::map<std::string,void*>& Args) {
+    ServerClient* Client =(ServerClient*) Args["Client"];
+    std::cout<<"server:"<<Buffer("Conectado").toString()<<std::endl;
+    Client->sendBuffer(Buffer("Conectado"));
+}
+MiddlewareModule ConnectModule(Connect,NULL);
 
 int main() {
     /*
     /**
      * Servidor Middleware
      */
-    //AsyncServer sv(25565,-1);
-
-    SyncClient cli;
-    std::cout<<cli.connect_("127.0.0.1",25565,1500).description<<std::endl;
-    std::string input;
-    while(cli.isConnected()) {
-        std::cin>>input;
-        cli.sendBuffer(Buffer(input));
-        std::cout<<cli.recvBuffer().toString()<<std::endl;
-        cli.disconnect();
-    }
-
+    AsyncServer sv(25565,-1);
+    sv.Use(ConnectModule,EventTypes::Connected,5);
+    sv.Start(false);
 
     /**
      * Registro de Eventos.

@@ -5,16 +5,19 @@
 #include "AsyncServer.h"
 void AsyncServer::loopFunction(AsyncServer *Server) {
     while (Server->listening) {
+
+        Server->clients[Server->idCounter] = ServerClient();
+        Server->clients[Server->idCounter].setId(Server->idCounter);
+        Server->clients[Server->idCounter].setFather(Server);
+        Server->clients[Server->idCounter].setEvents(Server->events);
+
         int clientDataLen = sizeof(Server->clients[Server->idCounter].sockData);
 
         ErrorMessage Err;
         Err.code        = ErrorCodes::NoError;
         Err.description = "OK";
 
-        Server->clients[Server->idCounter]._socket = accept(Server->_socket,(struct sockaddr*)&Server->sockData,&clientDataLen);
-        Server->clients[Server->idCounter].setId(Server->idCounter);
-        Server->clients[Server->idCounter].setFather(Server);
-        Server->clients[Server->idCounter].setEvents(Server->events);
+        Server->clients[Server->idCounter]._socket = accept(Server->_socket,(struct sockaddr*)&Server->clients[Server->idCounter].sockData,&clientDataLen);
         Server->clients[Server->idCounter].Start();
 
 
@@ -24,9 +27,10 @@ void AsyncServer::loopFunction(AsyncServer *Server) {
         Args["Buffer"]          = NULL;
         Args["ErrorMessage"]    = &Err;
 
-        for(auto event : Server->events[(int)EventTypes::Connected]) {
-            if(event.ServerMain!=NULL)
-                event.ServerMain(Args);
+        for (int i=0;i<Server->events[(int)EventTypes::Connected].size();i++) {
+            if(Server->events[(int)EventTypes::Connected][i].ServerMain != NULL) {
+                Server->events[(int) EventTypes::Connected][i].ServerMain(Args);
+            }
         }
         Server->idCounter+=1;
     }
@@ -105,22 +109,6 @@ void ServerClient::Start() {
     this->loopThread    = std::thread(this->loopFunction,this);
     this->connected     = true;
     this->loopThread.detach();
-
-    ErrorMessage Err;
-    Err.code        = ErrorCodes::NoError;
-    Err.description = "OK";
-
-    std::map<std::string,void*> Args;
-    Args["Client"]          = this;
-    Args["Buffer"]          = NULL;
-    Args["ErrorMessage"]    = &Err;
-
-    for(auto event:this->events[(int)EventTypes::Connected]){
-        if( event.ServerMain!=NULL) {
-            event.ServerMain(Args);
-        }
-    }
-
 }
 
 AsyncServer *ServerClient::getFather() const {
