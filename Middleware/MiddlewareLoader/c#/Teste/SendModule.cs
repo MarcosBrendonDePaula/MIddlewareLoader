@@ -3,16 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MiddlewareLoader;
 using MiddlewareLoader.Async;
 
-namespace MiddlewareLoader
+
+namespace Teste
 {
     class SendModule : MiddlewareModule
     {
         public override void Main(Dictionary<string, object> args)
         {
             base.Main(args);
-            Buffer bf = (Buffer)args["Buffer"];
+            MiddlewareLoader.Buffer bf = (MiddlewareLoader.Buffer)args["Buffer"];
             ServerClientTcp client = (ServerClientTcp)args["Client"];
             bf.SetString(bf+" "+"Aloha");
         }

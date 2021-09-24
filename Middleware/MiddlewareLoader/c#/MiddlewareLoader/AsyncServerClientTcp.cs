@@ -11,7 +11,7 @@ namespace MiddlewareLoader
 
     namespace Async
     {
-        class ServerClientTcp : Socket
+        public class ServerClientTcp : Socket
         {
             /// <summary>
             /// le o Servidor
@@ -26,7 +26,7 @@ namespace MiddlewareLoader
             /// <summary>
             /// thread do loop de recebimento.
             /// </summary>
-            private Task TsakRecvLoop;
+            public Task TsakRecvLoop { get; set; }
 
             /// <summary>
             /// Lista de eventos a serem executadas.
@@ -59,10 +59,7 @@ namespace MiddlewareLoader
                 args.Add("ErrorMessage", err);
                 args.Add("Buffer", buff);
 
-                foreach (var module in Events[(int)EventType.Sended])
-                {
-                    module.Main(args);
-                }
+                MiddlewareLoaderConfig.CallEvents(args, Events, EventType.Sended);
 
                 return base.SendBuffer(buff); ;
             }
@@ -103,11 +100,8 @@ namespace MiddlewareLoader
                     args.Add("Client", client);
                     args.Add("ErrorMessage", err);
                     args.Add("Buffer", novo);
-
-                    foreach (var module in Events[(int)EventType.Received])
-                    {
-                        module.Main(args);
-                    }
+                    MiddlewareLoaderConfig.CallEvents(args, Events, EventType.Received);
+                   
                 }
 
                 args = new Dictionary<string, object>();
@@ -118,10 +112,7 @@ namespace MiddlewareLoader
                 args.Add("Client", client);
                 args.Add("ErrorMessage", err);
 
-                foreach (var module in Events[(int)EventType.Disconnected])
-                {
-                    module.Main(args);
-                }
+                MiddlewareLoaderConfig.CallEvents(args, Events, EventType.Disconnected);
 
                 client.Servidor.Clients.Remove(client.Id);
 

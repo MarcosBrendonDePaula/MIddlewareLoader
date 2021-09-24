@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MiddlewareLoader
 {
-    enum EventType
+    public enum EventType
     {
         Connected     = 0,
         Disconnected  = 1,

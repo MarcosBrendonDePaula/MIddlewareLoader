@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MiddlewareLoader
 {
-    class Buffer
+    public class Buffer
     {
         public byte[] Data { get; set; }
         public int MaxBuffer { get; set; }

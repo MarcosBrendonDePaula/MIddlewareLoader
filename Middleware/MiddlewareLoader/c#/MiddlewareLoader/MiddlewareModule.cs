@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MiddlewareLoader
 {
-    class MiddlewareModule : IEquatable<MiddlewareModule>, IComparable<MiddlewareModule>
+    public class MiddlewareModule : IEquatable<MiddlewareModule>, IComparable<MiddlewareModule>
     {
         public int Priority = 0;
 

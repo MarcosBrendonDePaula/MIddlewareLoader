@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MiddlewareLoader
 {
-    class ErrorMesage
+    public class ErrorMesage
     {
         public int code;
         public string description;

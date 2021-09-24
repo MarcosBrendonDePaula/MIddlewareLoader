@@ -1,14 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace MiddlewareLoader
 {
     namespace Async
     {
-        class ServerTcp : Socket
+        public class ServerTcp : Socket
         {
             public int MaxBuffer;
             public int Port;
@@ -24,22 +22,33 @@ namespace MiddlewareLoader
             {
                 IdCounter = 0;
                 Clients = new Dictionary<int, ServerClientTcp>();
-                Events = new List<List<MiddlewareModule>>() {
-                    new List<MiddlewareModule>(),
-                    new List<MiddlewareModule>(),
-                    new List<MiddlewareModule>(),
-                    new List<MiddlewareModule>(),
-                    new List<MiddlewareModule>(),
-                    new List<MiddlewareModule>(),
-                    new List<MiddlewareModule>(),
-                };
+                Events = new List<List<MiddlewareModule>>();
+                for (int i = 0; i < 10; i++)
+                {
+                    Events.Add(new List<MiddlewareModule>());
+                }
             }
 
-            public void Start(int port = 25565, int maxBuffer = 1500)
+            public void Start(int port = 25565, int maxBuffer = 1500, int backLog = 10)
             {
+
+                ErrorMesage Err = new ErrorMesage { code = (int)EventType.ServerStarted, description = "OK" };
+
                 this.MaxBuffer = maxBuffer;
                 this.Port      = port;
-                this.Listen("127.0.0.1", port, 10);
+                if (!this.Listen("127.0.0.1", port, backLog))
+                {
+                    Err.description = "Erro ao colocar socket em modo listen";
+                    Err.code *= -1;
+                }
+
+                Dictionary<string, Object> args = new Dictionary<string, object>
+                {
+                    {"Server", this}, {"ErrorMessage", Err}
+                };
+
+                MiddlewareLoaderConfig.CallEvents(args, Events, EventType.ServerStarted);
+
                 this.TaskAcceptLoop = Task.Run(() =>
                 {
                     AcceptLoop(this);
@@ -69,11 +78,7 @@ namespace MiddlewareLoader
                     args.Add("Client", client);
                     args.Add("ErrorMessage", Err);
 
-                    foreach (var module in Events[(int)EventType.Connected])
-                    {
-                        Console.WriteLine(module.GetType().Name);
-                        module.Main(args);
-                    }
+                    MiddlewareLoaderConfig.CallEvents(args,Server.Events, EventType.Connected);
 
                     Clients.Add(Server.IdCounter,client);
                     client.InitCommunication();

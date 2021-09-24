@@ -1,14 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Net.Sockets;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace MiddlewareLoader
 {
-    class Socket
+    public class Socket
     {
         public bool Connected
         {
@@ -42,9 +39,17 @@ namespace MiddlewareLoader
         {
             if (this.Socket_.Connected)
             {
-                Byte[] bytes = new Byte[maxBuffer];
-                int n_bytes = this.Socket_.Receive(bytes, maxBuffer, SocketFlags.None);
-                return new Buffer(bytes, n_bytes, maxBuffer);
+                try
+                {
+                    Byte[] bytes = new Byte[maxBuffer];
+                    int n_bytes = this.Socket_.Receive(bytes, maxBuffer, SocketFlags.None);
+                    return new Buffer(bytes, n_bytes, maxBuffer);
+                }
+                catch (System.Net.Sockets.SocketException e)
+                {
+                    return null;
+                }
+                
             }
             else
             {
@@ -91,19 +96,28 @@ namespace MiddlewareLoader
 
         public virtual bool Listen(string ip = "127.0.0.1", int port = 25565, int backLog = 10)
         {
-            this.Ip   = ip;
+            this.Ip = ip;
             this.Port = port;
 
-            this.SockIPHostEntry = Dns.GetHostEntry(this.Ip);
-            this.SockIPAddress   = this.SockIPHostEntry.AddressList[0];
-            this.SockIPEndPoint  = new IPEndPoint(this.SockIPAddress, this.Port);
-            this.Socket_         = new System.Net.Sockets.Socket(this.SockIPAddress.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
+            try
+            {
+                this.SockIPHostEntry = Dns.GetHostEntry(this.Ip);
+                this.SockIPAddress = this.SockIPHostEntry.AddressList[0];
+                this.SockIPEndPoint = new IPEndPoint(this.SockIPAddress, this.Port);
+                this.Socket_ = new System.Net.Sockets.Socket(this.SockIPAddress.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
+
+                this.Socket_.Bind(this.SockIPEndPoint);
+
+                this.Socket_.Listen(backLog);
+
+                this.Listening = true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return false;
+            }
             
-            this.Socket_.Bind(this.SockIPEndPoint);
-            
-            this.Socket_.Listen(backLog);
-            
-            this.Listening       = true;
             return true;
         }
 
