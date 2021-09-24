@@ -29,6 +29,7 @@ private:
 
     std::thread loopThread;
     static void loopFunction(AsyncServer* Server);
+    static void AcceptEvent(AsyncServer *Server,ServerClient* client);
 public:
     int DEFAULTBUFFERSIZE = 1500;
     AsyncServer(int port = 25565, int limit = -1);

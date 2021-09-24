@@ -3,6 +3,25 @@
 //
 
 #include "AsyncServer.h"
+void AsyncServer::AcceptEvent(AsyncServer *Server,ServerClient* client) {
+    ErrorMessage Err;
+    Err.code        = ErrorCodes::NoError;
+    Err.description = "OK";
+    
+    std::map<std::string,void*> Args;
+    Args["Server"]          = Server;
+    Args["Client"]          = client;
+    Args["Buffer"]          = NULL;
+    Args["ErrorMessage"]    = &Err;
+    for(auto event:Server->events[(int)EventTypes::Connected]) {
+        if(event.ServerMain != NULL) {
+            event.ServerMain(Args);
+        }
+    }
+
+    client->Start();
+}
+
 void AsyncServer::loopFunction(AsyncServer *Server) {
     while (Server->listening) {
 
@@ -13,25 +32,10 @@ void AsyncServer::loopFunction(AsyncServer *Server) {
 
         int clientDataLen = sizeof(Server->clients[Server->idCounter].sockData);
 
-        ErrorMessage Err;
-        Err.code        = ErrorCodes::NoError;
-        Err.description = "OK";
-
         Server->clients[Server->idCounter]._socket = accept(Server->_socket,(struct sockaddr*)&Server->clients[Server->idCounter].sockData,&clientDataLen);
-        Server->clients[Server->idCounter].Start();
-
-
-        std::map<std::string,void*> Args;
-        Args["Server"]          = Server;
-        Args["Client"]          = &Server->clients[Server->idCounter];
-        Args["Buffer"]          = NULL;
-        Args["ErrorMessage"]    = &Err;
-
-        for (int i=0;i<Server->events[(int)EventTypes::Connected].size();i++) {
-            if(Server->events[(int)EventTypes::Connected][i].ServerMain != NULL) {
-                Server->events[(int) EventTypes::Connected][i].ServerMain(Args);
-            }
-        }
+        
+        auto th = std::thread(AsyncServer::AcceptEvent,Server,&Server->clients[Server->idCounter]);
+        th.detach();
         Server->idCounter+=1;
     }
 }
