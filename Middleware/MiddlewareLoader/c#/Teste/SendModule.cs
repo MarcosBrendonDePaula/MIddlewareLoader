@@ -15,8 +15,18 @@ namespace Teste
         {
             base.Main(args);
             MiddlewareLoader.Buffer bf = (MiddlewareLoader.Buffer)args["Buffer"];
-            ServerClientTcp client = (ServerClientTcp)args["Client"];
-            bf.SetString(bf+" "+"Aloha");
+            if (args["Client"].GetType() == typeof(AsyncClientTcp))
+            {
+                var cli = (AsyncClientTcp)args["Client"];
+                bf.SetString(bf + " " + "Aloha");
+            }
+            else
+            {
+                ServerClientTcp client = (ServerClientTcp)args["Client"];
+                bf.SetString(bf + " " + "Aloha");
+            }
+           
+            
         }
     }
 }

@@ -12,9 +12,16 @@ namespace Teste
     {
         public override void Main(Dictionary<string, object> args)
         {
+            if (args["Client"].GetType() == typeof(AsyncClientTcp))
+            {
+                Console.WriteLine("O cliente foi desconectado!");
+            }
+            else
+            {
+                var client = (ServerClientTcp)args["Client"];
+                Console.WriteLine("O cliente:" + client.Id + " foi desconectado!");
+            }
             base.Main(args);
-            var client = (ServerClientTcp)args["Client"];
-            Console.WriteLine("O cliente:"+client.Id+" foi desconectado!");
         }
     }
 }

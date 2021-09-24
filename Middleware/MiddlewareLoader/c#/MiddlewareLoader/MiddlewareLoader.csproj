@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AsyncClientTcp.cs" />
     <Compile Include="AsyncServerClientTcp.cs" />
     <Compile Include="AsyncSeverTcp.cs" />
     <Compile Include="Buffer.cs" />

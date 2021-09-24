@@ -12,10 +12,21 @@ namespace Teste
     {
         public override void Main(Dictionary<string, object> args)
         {
-            var bf     = (MiddlewareLoader.Buffer) args["Buffer"];
-            var client = (ServerClientTcp) args["Client"];
-            bf.SetString(bf + " Eu modifiquei o texto");
-            Console.WriteLine("Recebi:" + bf + " de "+client.Id);
+            var bf = (MiddlewareLoader.Buffer)args["Buffer"];
+            if (args["Client"].GetType() == typeof(AsyncClientTcp))
+            {
+                Console.WriteLine("Recebi:" + bf);
+            }
+            else
+            {
+               
+                var client = (ServerClientTcp)args["Client"];
+                bf.SetString(bf + " Eu modifiquei o texto");
+                Console.WriteLine("Recebi:" + bf + " de " + client.Id);
+            }
+            
+
+
             
         }
     }

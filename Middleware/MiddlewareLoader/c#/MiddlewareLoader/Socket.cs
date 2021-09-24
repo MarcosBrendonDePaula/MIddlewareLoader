@@ -26,9 +26,9 @@ namespace MiddlewareLoader
         public  IPEndPoint                SockIPEndPoint { get; set; }
 
         public  bool                      Listening { get; set; }  
-        private int                       Port;
-        private string                    Ip;
-
+        public int                        Port { get; set; }
+        public string                     Ip { get; set; }
+        public int                        MaxBuffer { get; set; }
 
         /// <summary>
         /// Retorna Um Buffer ao receber os dados;
@@ -68,24 +68,30 @@ namespace MiddlewareLoader
             return true;
         }
 
-        public virtual bool Connect(string ip, int port)
+        public virtual bool Connect(string ip="127.0.0.1", int port=25565, int maxBuffer = 1500)
         {
             this.Ip = ip;
             this.Port = port;
-            this.SockIPHostEntry = Dns.GetHostEntry(ip);
+            this.MaxBuffer = maxBuffer;
 
+            this.SockIPHostEntry = Dns.GetHostEntry(this.Ip);
             foreach (IPAddress address in this.SockIPHostEntry.AddressList)
             {
-                this.SockIPEndPoint = new IPEndPoint(address, port);
+                this.SockIPEndPoint = new IPEndPoint(address, this.Port);
                 this.Socket_        = new System.Net.Sockets.Socket(this.SockIPEndPoint.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
                 this.SockIPAddress  = address;
-                this.Socket_.Connect(this.SockIPEndPoint);
-                if (this.Socket_.Connected)
+                try
                 {
-                    break;
+                    this.Socket_.Connect(this.SockIPEndPoint);
+                    return true;
                 }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                }
+
             }
-            return true;
+            return false;
         }
 
         public virtual bool Disconnect()

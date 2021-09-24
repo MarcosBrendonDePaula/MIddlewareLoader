@@ -17,14 +17,15 @@ namespace Teste
             var Sm = new SendModule();
             var Dm = new DisconnectModule();
 
-            var  s = new ServerTcp();
+            //var  s = new ServerTcp();
+            var s = new AsyncClientTcp();
             s.Use(m1,EventType.Connected);
             s.Use(Rm, EventType.Received);
             s.Use(Sm,EventType.Sended);
             s.Use(Dm,EventType.Disconnected);
 
-            s.Start(21,1500);
-            s.TaskAcceptLoop.Wait();
+            s.Connect("127.0.0.1",21,1500);
+            s.TaskReciveLoop.Wait();
         }
     }
 }

@@ -86,7 +86,7 @@ namespace MiddlewareLoader
                 ErrorMesage err;
                 while (client.Connected)
                 {
-                    var novo = client.GetBuffer();
+                    var novo = client.GetBuffer(client.MaxBuffer);
                     if (!client.Connected)
                     {
                         break;

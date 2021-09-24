@@ -8,15 +8,12 @@ namespace MiddlewareLoader
     {
         public class ServerTcp : Socket
         {
-            public int MaxBuffer;
-            public int Port;
             public Task TaskAcceptLoop;
 
             public Dictionary<int, ServerClientTcp> Clients;
             public List<List<MiddlewareModule>> Events;
 
             private int IdCounter { get; set; }
-
 
             public ServerTcp()
             {
@@ -67,7 +64,9 @@ namespace MiddlewareLoader
                 {
                     ServerClientTcp client = new ServerClientTcp(Server.IdCounter, this)
                     {
-                        Socket_ = Server.AcceptConnection(), Events = Server.Events
+                        Socket_ = Server.AcceptConnection(),
+                        Events = Server.Events,
+                        MaxBuffer = Server.MaxBuffer
                     };
 
                     Dictionary<string, Object> args = new Dictionary<string, object>();
