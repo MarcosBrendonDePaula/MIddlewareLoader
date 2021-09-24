@@ -1,14 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using MiddlewareLoader;
 using MiddlewareLoader.Async;
 
 namespace Teste
 {
-    class ModuloDeTestes : MiddlewareModule
+    class ConnectModule : MiddlewareModule
     {
         public override void Main(Dictionary<string, object> args)
         {

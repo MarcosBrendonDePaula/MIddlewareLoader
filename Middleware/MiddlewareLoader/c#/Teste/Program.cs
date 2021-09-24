@@ -12,7 +12,7 @@ namespace Teste
     {
         static void Main(string[] args)
         {
-            var m1 = new ModuloDeTestes();
+            var m1 = new ConnectModule();
             var Rm = new ReceivedModule();
             var Sm = new SendModule();
             var Dm = new DisconnectModule();
