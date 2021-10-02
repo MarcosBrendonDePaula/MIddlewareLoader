@@ -23,14 +23,14 @@ private:
     std::string ip;
     int port;
     int DEFAULTBUFFERSIZE=1500;
-    std::vector<std::vector<MiddlewareModule>> events;
+    std::vector<std::vector<MiddlewareModule*>> events;
 
     std::thread loopThread;
     static void loopFunction(AsyncClient* Client);
 public:
     AsyncClient();
 
-    ErrorMessage Use(MiddlewareModule module,EventTypes event,int priority = 5);
+    ErrorMessage Use(MiddlewareModule* module,EventTypes event,int priority = 5);
 
     bool isConnected() const;
 
@@ -42,9 +42,9 @@ public:
 
     void setPort(int port);
 
-    const std::vector<std::vector<MiddlewareModule>> &getEvents() const;
+    const std::vector<std::vector<MiddlewareModule*>> &getEvents() const;
 
-    void setEvents(const std::vector<std::vector<MiddlewareModule>> &events);
+    void setEvents(const std::vector<std::vector<MiddlewareModule*>> &events);
 
     const std::thread &getLoopThread() const;
 

@@ -6,7 +6,7 @@
 
 AsyncClient::AsyncClient() {
     this->connected = false;
-    this->events = std::vector<std::vector<MiddlewareModule>>(10);
+    this->events = std::vector<std::vector<MiddlewareModule*>>(10);
 }
 
 bool AsyncClient::isConnected() const {
@@ -29,12 +29,12 @@ void AsyncClient::setPort(int port) {
     AsyncClient::port = port;
 }
 
-const std::vector<std::vector<MiddlewareModule>> &AsyncClient::getEvents() const {
+const std::vector<std::vector<MiddlewareModule*>> &AsyncClient::getEvents() const {
     return events;
 }
 
-void AsyncClient::setEvents(const std::vector<std::vector<MiddlewareModule>> &events) {
-    AsyncClient::events = events;
+void AsyncClient::setEvents(const std::vector<std::vector<MiddlewareModule*>> &events) {
+   this->events = events;
 }
 
 const std::thread &AsyncClient::getLoopThread() const {
@@ -68,9 +68,7 @@ ErrorMessage AsyncClient::connect_(std::string ip, int port,int defaultbuffersiz
     Args["ErrorMessage"]    = &Err;
 
     for(auto event:this->events[(int)EventTypes::Connected]){
-        if( event.ClientMain!=NULL) {
-            event.ClientMain(Args);
-        }
+        event->Main(Args);
     }
 
     if(detach) {
@@ -90,11 +88,11 @@ void AsyncClient::setDefaultbuffersize(int defaultbuffersize) {
     DEFAULTBUFFERSIZE = defaultbuffersize;
 }
 
-ErrorMessage AsyncClient::Use(MiddlewareModule module, EventTypes event, int priority) {
+ErrorMessage AsyncClient::Use(MiddlewareModule* module, EventTypes event, int priority) {
     ErrorMessage DEFAULT;
     DEFAULT.code    = ErrorCodes::NoError;
 
-    module.priority = priority;
+    module->priority = priority;
 
     this->events[(int)event].push_back(module);
 
@@ -113,9 +111,7 @@ ErrorMessage AsyncClient::sendBuffer(Buffer data) {
     Args["ErrorMessage"]    = &Err;
 
     for(auto event:this->events[(int)EventTypes::Sended]){
-        if( event.ClientMain!=NULL) {
-            event.ClientMain(Args);
-        }
+        event->Main(Args);
     }
 
     if(send(this->_socket,data[0],data.getActualSize(),0)!=data.getActualSize()) {
@@ -157,9 +153,7 @@ void AsyncClient::loopFunction(AsyncClient *Client) {
         Args["ErrorMessage"] = &Err;
 
         for(auto event:Client->events[(int)EventTypes::Received]){
-            if( event.ClientMain!=NULL) {
-                event.ClientMain(Args);
-            }
+            event->Main(Args);
         }
 
     }
@@ -170,8 +164,6 @@ void AsyncClient::loopFunction(AsyncClient *Client) {
     Args["ErrorMessage"]    = &Err;
 
     for(auto event:Client->events[(int)EventTypes::Disconnected]){
-        if( event.ClientMain!=NULL) {
-            event.ClientMain(Args);
-        }
+        event->Main(Args);
     }
 }

@@ -4,11 +4,6 @@
 
 #include "MiddlewareModule.h"
 
-bool MiddlewareModule::operator<(MiddlewareModule check) {
-    return this->priority<check.priority;
-}
-
-MiddlewareModule::MiddlewareModule(void (*ServerMain)(std::map<std::string, void *> &), void (*ClientMain)(std::map<std::string, void *> &)) {
-    this->ServerMain = ServerMain;
-    this->ClientMain = ClientMain;
+bool MiddlewareModule::operator<(MiddlewareModule* obj) {
+    return this->priority<obj->priority;
 }

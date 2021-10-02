@@ -58,6 +58,10 @@
       <Project>{1db835fc-43e2-4efc-a09e-2a77e94748be}</Project>
       <Name>MiddlewareLoader</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Middleware\Middleware.csproj">
+      <Project>{7e4288a4-07eb-43cb-ac73-e74e7f20e3c2}</Project>
+      <Name>Middleware</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

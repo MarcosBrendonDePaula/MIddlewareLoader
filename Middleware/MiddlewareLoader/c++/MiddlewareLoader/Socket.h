@@ -7,6 +7,8 @@
 
 #include <winsock2.h>
 #include <cstring>
+#include "Buffer.h"
+#include "ErrorMessage.h"
 
 class Socket {
 public:
@@ -18,6 +20,9 @@ public:
      */
     static WSAData windowsDl;
     static bool windowsSockDlInit;
+
+    virtual Buffer recvBuffer(int maxBuffer = 1500);
+    virtual ErrorMessage sendBuffer(Buffer data);
 protected:
 
 };

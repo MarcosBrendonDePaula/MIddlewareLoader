@@ -98,6 +98,30 @@
 		<Unit filename="C:/Users/nexga/Documents/GitHub/tcc/Middleware/MiddlewareLoader/c++/MiddlewareLoader/EventTypes.h">
 			<Option target="MiddlewareLoader"/>
 		</Unit>
+		<Unit filename="C:/Users/nexga/Documents/GitHub/tcc/Middleware/MiddlewareLoader/c++/MiddlewareLoader/Middleware/Config.cpp">
+			<Option target="MiddlewareLoader"/>
+		</Unit>
+		<Unit filename="C:/Users/nexga/Documents/GitHub/tcc/Middleware/MiddlewareLoader/c++/MiddlewareLoader/Middleware/Config.h">
+			<Option target="MiddlewareLoader"/>
+		</Unit>
+		<Unit filename="C:/Users/nexga/Documents/GitHub/tcc/Middleware/MiddlewareLoader/c++/MiddlewareLoader/Middleware/FunctionManager.cpp">
+			<Option target="MiddlewareLoader"/>
+		</Unit>
+		<Unit filename="C:/Users/nexga/Documents/GitHub/tcc/Middleware/MiddlewareLoader/c++/MiddlewareLoader/Middleware/FunctionManager.h">
+			<Option target="MiddlewareLoader"/>
+		</Unit>
+		<Unit filename="C:/Users/nexga/Documents/GitHub/tcc/Middleware/MiddlewareLoader/c++/MiddlewareLoader/Middleware/Middleware.cpp">
+			<Option target="MiddlewareLoader"/>
+		</Unit>
+		<Unit filename="C:/Users/nexga/Documents/GitHub/tcc/Middleware/MiddlewareLoader/c++/MiddlewareLoader/Middleware/Middleware.h">
+			<Option target="MiddlewareLoader"/>
+		</Unit>
+		<Unit filename="C:/Users/nexga/Documents/GitHub/tcc/Middleware/MiddlewareLoader/c++/MiddlewareLoader/Middleware/Node.cpp">
+			<Option target="MiddlewareLoader"/>
+		</Unit>
+		<Unit filename="C:/Users/nexga/Documents/GitHub/tcc/Middleware/MiddlewareLoader/c++/MiddlewareLoader/Middleware/Node.h">
+			<Option target="MiddlewareLoader"/>
+		</Unit>
 		<Unit filename="C:/Users/nexga/Documents/GitHub/tcc/Middleware/MiddlewareLoader/c++/MiddlewareLoader/MiddlewareModule.cpp">
 			<Option target="MiddlewareLoader"/>
 		</Unit>

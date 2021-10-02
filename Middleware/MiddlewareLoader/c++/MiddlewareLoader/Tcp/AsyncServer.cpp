@@ -14,9 +14,7 @@ void AsyncServer::AcceptEvent(AsyncServer *Server,ServerClient* client) {
     Args["Buffer"]          = NULL;
     Args["ErrorMessage"]    = &Err;
     for(auto event:Server->events[(int)EventTypes::Connected]) {
-        if(event.ServerMain != NULL) {
-            event.ServerMain(Args);
-        }
+        event->Main(Args);
     }
 
     client->Start();
@@ -41,14 +39,14 @@ void AsyncServer::loopFunction(AsyncServer *Server) {
 }
 
 AsyncServer::AsyncServer(int port, int limit) : port(port), limit(limit) {
-    this->events = std::vector<std::vector<MiddlewareModule>>(10);
+    this->events = std::vector<std::vector<MiddlewareModule*>>(10);
 }
 
-ErrorMessage AsyncServer::Use(MiddlewareModule module, EventTypes event, int priority) {
+ErrorMessage AsyncServer::Use(MiddlewareModule* module, EventTypes event, int priority) {
     ErrorMessage DEFAULT;
     DEFAULT.code    = ErrorCodes::NoError;
 
-    module.priority = priority;
+    module->priority = priority;
 
     this->events[(int)event].push_back(module);
 
@@ -150,9 +148,7 @@ void ServerClient::loopFunction(ServerClient *Client) {
         Args["ErrorMessage"] = &Err;
 
         for(auto event:Client->events[(int)EventTypes::Received]){
-            if( event.ServerMain!=NULL) {
-                event.ServerMain(Args);
-            }
+            event->Main(Args);
         }
 
     }
@@ -164,19 +160,17 @@ void ServerClient::loopFunction(ServerClient *Client) {
     Args["ErrorMessage"]    = &Err;
 
     for(auto event:Client->events[(int)EventTypes::Disconnected]){
-        if( event.ServerMain!=NULL) {
-            event.ServerMain(Args);
-        }
+        event->Main(Args);
     }
 }
 
 ServerClient::ServerClient() {}
 
-const std::vector<std::vector<MiddlewareModule>> &ServerClient::getEvents() const {
+const std::vector<std::vector<MiddlewareModule*>> &ServerClient::getEvents() const {
     return events;
 }
 
-void ServerClient::setEvents(std::vector<std::vector<MiddlewareModule>> &events) {
+void ServerClient::setEvents(std::vector<std::vector<MiddlewareModule*>> &events) {
     ServerClient::events = events;
 }
 
@@ -197,9 +191,7 @@ ErrorMessage ServerClient::sendBuffer(Buffer data) {
     Args["ErrorMessage"]    = &Err;
 
     for(auto event:this->events[(int)EventTypes::Sended]){
-        if( event.ServerMain!=NULL) {
-            event.ServerMain(Args);
-        }
+        event->Main(Args);
     }
 
     if(send(this->_socket,data[0],data.getActualSize(),0)!=data.getActualSize()) {

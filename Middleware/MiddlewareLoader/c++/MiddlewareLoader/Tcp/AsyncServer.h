@@ -24,7 +24,7 @@ private:
     int limit;
     bool listening;
     unsigned int idCounter;
-    std::vector<std::vector<MiddlewareModule>> events;
+    std::vector<std::vector<MiddlewareModule*>> events;
     std::map<unsigned int,ServerClient> clients;
 
     std::thread loopThread;
@@ -33,7 +33,7 @@ private:
 public:
     int DEFAULTBUFFERSIZE = 1500;
     AsyncServer(int port = 25565, int limit = -1);
-    ErrorMessage Use(MiddlewareModule module,EventTypes event,int priority = 5);
+    ErrorMessage Use(MiddlewareModule* module,EventTypes event,int priority = 5);
     ErrorMessage Start(bool detach = true);
 };
 
@@ -43,7 +43,7 @@ private:
     bool connected;
     int id;
     AsyncServer* father;
-    std::vector<std::vector<MiddlewareModule>> events;
+    std::vector<std::vector<MiddlewareModule*>> events;
 
     std::thread loopThread;
     static void loopFunction(ServerClient* Client);
@@ -68,9 +68,9 @@ public:
 
     void setId(int id);
 
-    const std::vector<std::vector<MiddlewareModule>> &getEvents() const;
+    const std::vector<std::vector<MiddlewareModule*>> &getEvents() const;
 
-    void setEvents(std::vector<std::vector<MiddlewareModule>> &events);
+    void setEvents(std::vector<std::vector<MiddlewareModule*>> &events);
 
     ErrorMessage sendBuffer(Buffer data);
 };

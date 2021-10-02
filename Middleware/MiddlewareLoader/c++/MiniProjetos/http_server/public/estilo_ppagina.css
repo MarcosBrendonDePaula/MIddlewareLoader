@@ -1,0 +1,12 @@
+#borda{
+    border: 20px solid black;
+    background-color:rgba(242, 246, 247, 0.959);
+}
+li{
+    font-size: 23px;
+    font-family: Arial;
+}
+h3{
+    font-size: 30px;
+    font-family: Arial;;
+}

@@ -29,12 +29,9 @@ public:
         Args["ErrorMessage"]    type: ErrorMessage*
     --------------------------------------------
     */
-
-    MiddlewareModule(void (*ServerMain)(std::map<std::string, void *> &Args) = NULL, void (*ClientMain)(std::map<std::string, void *> &)= NULL );
-    void (*ServerMain)(std::map<std::string,void*>&) = NULL;
-    void (*ClientMain)(std::map<std::string,void*>&) = NULL;
+    virtual void Main(std::map<std::string,void*>&) = 0;
     int priority;
-    bool operator< (MiddlewareModule check);
+    bool operator< (MiddlewareModule* obj);
 private:
 
 };

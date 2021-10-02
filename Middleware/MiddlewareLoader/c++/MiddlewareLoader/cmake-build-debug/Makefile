@@ -222,6 +222,114 @@ EventTypes.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\MiddlewareLoader.dir\build.make CMakeFiles/MiddlewareLoader.dir/EventTypes.cpp.s
 .PHONY : EventTypes.cpp.s
 
+Middleware/Config.obj: Middleware/Config.cpp.obj
+
+.PHONY : Middleware/Config.obj
+
+# target to build an object file
+Middleware/Config.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MiddlewareLoader.dir\build.make CMakeFiles/MiddlewareLoader.dir/Middleware/Config.cpp.obj
+.PHONY : Middleware/Config.cpp.obj
+
+Middleware/Config.i: Middleware/Config.cpp.i
+
+.PHONY : Middleware/Config.i
+
+# target to preprocess a source file
+Middleware/Config.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MiddlewareLoader.dir\build.make CMakeFiles/MiddlewareLoader.dir/Middleware/Config.cpp.i
+.PHONY : Middleware/Config.cpp.i
+
+Middleware/Config.s: Middleware/Config.cpp.s
+
+.PHONY : Middleware/Config.s
+
+# target to generate assembly for a file
+Middleware/Config.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MiddlewareLoader.dir\build.make CMakeFiles/MiddlewareLoader.dir/Middleware/Config.cpp.s
+.PHONY : Middleware/Config.cpp.s
+
+Middleware/FunctionManager.obj: Middleware/FunctionManager.cpp.obj
+
+.PHONY : Middleware/FunctionManager.obj
+
+# target to build an object file
+Middleware/FunctionManager.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MiddlewareLoader.dir\build.make CMakeFiles/MiddlewareLoader.dir/Middleware/FunctionManager.cpp.obj
+.PHONY : Middleware/FunctionManager.cpp.obj
+
+Middleware/FunctionManager.i: Middleware/FunctionManager.cpp.i
+
+.PHONY : Middleware/FunctionManager.i
+
+# target to preprocess a source file
+Middleware/FunctionManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MiddlewareLoader.dir\build.make CMakeFiles/MiddlewareLoader.dir/Middleware/FunctionManager.cpp.i
+.PHONY : Middleware/FunctionManager.cpp.i
+
+Middleware/FunctionManager.s: Middleware/FunctionManager.cpp.s
+
+.PHONY : Middleware/FunctionManager.s
+
+# target to generate assembly for a file
+Middleware/FunctionManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MiddlewareLoader.dir\build.make CMakeFiles/MiddlewareLoader.dir/Middleware/FunctionManager.cpp.s
+.PHONY : Middleware/FunctionManager.cpp.s
+
+Middleware/Middleware.obj: Middleware/Middleware.cpp.obj
+
+.PHONY : Middleware/Middleware.obj
+
+# target to build an object file
+Middleware/Middleware.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MiddlewareLoader.dir\build.make CMakeFiles/MiddlewareLoader.dir/Middleware/Middleware.cpp.obj
+.PHONY : Middleware/Middleware.cpp.obj
+
+Middleware/Middleware.i: Middleware/Middleware.cpp.i
+
+.PHONY : Middleware/Middleware.i
+
+# target to preprocess a source file
+Middleware/Middleware.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MiddlewareLoader.dir\build.make CMakeFiles/MiddlewareLoader.dir/Middleware/Middleware.cpp.i
+.PHONY : Middleware/Middleware.cpp.i
+
+Middleware/Middleware.s: Middleware/Middleware.cpp.s
+
+.PHONY : Middleware/Middleware.s
+
+# target to generate assembly for a file
+Middleware/Middleware.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MiddlewareLoader.dir\build.make CMakeFiles/MiddlewareLoader.dir/Middleware/Middleware.cpp.s
+.PHONY : Middleware/Middleware.cpp.s
+
+Middleware/Node.obj: Middleware/Node.cpp.obj
+
+.PHONY : Middleware/Node.obj
+
+# target to build an object file
+Middleware/Node.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MiddlewareLoader.dir\build.make CMakeFiles/MiddlewareLoader.dir/Middleware/Node.cpp.obj
+.PHONY : Middleware/Node.cpp.obj
+
+Middleware/Node.i: Middleware/Node.cpp.i
+
+.PHONY : Middleware/Node.i
+
+# target to preprocess a source file
+Middleware/Node.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MiddlewareLoader.dir\build.make CMakeFiles/MiddlewareLoader.dir/Middleware/Node.cpp.i
+.PHONY : Middleware/Node.cpp.i
+
+Middleware/Node.s: Middleware/Node.cpp.s
+
+.PHONY : Middleware/Node.s
+
+# target to generate assembly for a file
+Middleware/Node.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MiddlewareLoader.dir\build.make CMakeFiles/MiddlewareLoader.dir/Middleware/Node.cpp.s
+.PHONY : Middleware/Node.cpp.s
+
 MiddlewareModule.obj: MiddlewareModule.cpp.obj
 
 .PHONY : MiddlewareModule.obj
@@ -429,6 +537,18 @@ help:
 	@echo ... EventTypes.obj
 	@echo ... EventTypes.i
 	@echo ... EventTypes.s
+	@echo ... Middleware/Config.obj
+	@echo ... Middleware/Config.i
+	@echo ... Middleware/Config.s
+	@echo ... Middleware/FunctionManager.obj
+	@echo ... Middleware/FunctionManager.i
+	@echo ... Middleware/FunctionManager.s
+	@echo ... Middleware/Middleware.obj
+	@echo ... Middleware/Middleware.i
+	@echo ... Middleware/Middleware.s
+	@echo ... Middleware/Node.obj
+	@echo ... Middleware/Node.i
+	@echo ... Middleware/Node.s
 	@echo ... MiddlewareModule.obj
 	@echo ... MiddlewareModule.i
 	@echo ... MiddlewareModule.s
