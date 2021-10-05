@@ -10,3 +10,7 @@ FunctionManager * FunctionManager::Make() {
         FunctionManager::obj = new FunctionManager();
     return FunctionManager::obj;
 }
+
+FunctionManager::FunctionManager() {
+
+}

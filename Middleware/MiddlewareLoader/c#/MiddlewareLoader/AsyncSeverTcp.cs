@@ -77,7 +77,7 @@ namespace MiddlewareLoader
                     args.Add("Client", client);
                     args.Add("ErrorMessage", Err);
 
-                    MiddlewareLoaderConfig.CallEvents(args,Server.Events, EventType.Connected);
+                    MiddlewareLoaderConfig.CallEvents(args, Server.Events, EventType.Connected);
 
                     Clients.Add(Server.IdCounter,client);
                     client.InitCommunication();

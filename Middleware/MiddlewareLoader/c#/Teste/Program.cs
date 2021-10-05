@@ -1,31 +1,39 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Middleware;
 using MiddlewareLoader;
 using MiddlewareLoader.Async;
+using Buffer = MiddlewareLoader.Buffer;
+
 
 namespace Teste
 {
+    class ResponseTeste : MiddlewareModule
+    {
+        public override void Main(Dictionary<string, object> args)
+        {
+            AsyncClientTcp client = (AsyncClientTcp) args["Client"];
+            Console.WriteLine("Aguardando variavel..");
+            var teste = MultiMiddleware.MultiMiddleware.RecvVariable<double>("nodo1");
+            Console.WriteLine(teste);
+        }
+    }
+
     class Program
     {
         static void Main(string[] args)
         {
-            var m1 = new ConnectModule();
-            var Rm = new ReceivedModule();
-            var Sm = new SendModule();
-            var Dm = new DisconnectModule();
+            MultiMiddleware.MultiMiddleware MD = MultiMiddleware.MultiMiddleware.Make();
+            NodeManipulator                 NM = NodeManipulator.Make();
 
-            //var  s = new ServerTcp();
-            var s = new AsyncClientTcp();
-            s.Use(m1,EventType.Connected);
-            s.Use(Rm, EventType.Received);
-            s.Use(Sm,EventType.Sended);
-            s.Use(Dm,EventType.Disconnected);
-
-            s.Connect("127.0.0.1",21,1500);
-            s.TaskReciveLoop.Wait();
+            var  s = new MiddlewareLoader.Async.ServerTcp();
+            s.Use(new MultiMiddleware.MMConnect(),EventType.Connected);
+            s.Start(25566);
+            var teste = new AsyncClientTcp();
+            teste.Use(new ResponseTeste(), EventType.Received);
+            MD.ConnectTo("127.0.0.1", 25565, teste);
+            MultiMiddleware.MultiMiddleware.SendVariable<int>(0,"nodo1");
+            s.TaskAcceptLoop.Wait();
         }
     }
 }

@@ -10,22 +10,27 @@
 #include "./Config.h"
 #include <map>
 
+enum class Langs{
+    Csharp,
+    Cpp,
+};
+
 class Node {
 public:
-    std::string   Lang;
-    std::string   Name;
+    Langs         Lang;
     bool          Connected;
-    ServerClient* Client;
+    Socket*       Client;
+    std::string   Name;
 };
 
 class NodeManipulator {
 public:
-    std::map<std::string,Node> Nodes;
+    static std::map<std::string,Node> Nodes;
     static NodeManipulator* Obj;
     static NodeManipulator* Make();
 
     NodeManipulator();
-    void NodeRegister(std::string Lang,std::string Name,ServerClient* Client);
+    void NodeRegister(Langs Lang,std::string Name,Socket* Client);
 };
 
 #endif //MIDDLEWARELOADER_NODE_H

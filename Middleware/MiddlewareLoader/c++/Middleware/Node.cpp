@@ -3,7 +3,8 @@
 //
 
 #include "Node.h"
-NodeManipulator* NodeManipulator::Obj = nullptr;
+std::map<std::string,Node> NodeManipulator::Nodes = std::map<std::string,Node>();
+NodeManipulator* NodeManipulator::Obj             = nullptr;
 
 NodeManipulator * NodeManipulator::Make() {
     if(NodeManipulator::Obj == nullptr) {
@@ -16,12 +17,14 @@ NodeManipulator::NodeManipulator() {
 
 }
 
-void NodeManipulator::NodeRegister(std::string Lang,std::string Name,ServerClient* Client) {
+void NodeManipulator::NodeRegister(Langs Lang,std::string Name,Socket* Client) {
     auto novoNode = Node();
 
     novoNode.Lang   = Lang;
     novoNode.Name   = Name;
     novoNode.Client = Client;
-
+    novoNode.Connected = true;
+    
     this->Nodes[Name] = novoNode;
 }
+

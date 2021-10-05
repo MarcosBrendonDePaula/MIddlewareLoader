@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiddlewareLoader", "Middlew
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Teste", "..\Teste\Teste.csproj", "{8A37B2CE-E928-468B-A0A8-B8817391D1E3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Middleware", "..\Middleware\Middleware.csproj", "{7E4288A4-07EB-43CB-AC73-E74E7F20E3C2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiMiddleware", "..\Middleware\MultiMiddleware.csproj", "{7E4288A4-07EB-43CB-AC73-E74E7F20E3C2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

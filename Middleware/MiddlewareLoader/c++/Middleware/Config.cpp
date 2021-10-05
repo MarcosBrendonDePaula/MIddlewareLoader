@@ -3,7 +3,11 @@
 //
 
 #include "Config.h"
-bool Config::Debug             = true;
-int Config::maxBuffer          = 1500;
-std::string Config::Name       = "nodo1";
-const std::string Config::Lang = "C++";
+//Middleware Config
+bool Config::Debug               = true;
+
+//Node Information
+std::string Config::Name         = "nodo1";
+int Config::Lang                 = (int)Langs::Cpp;
+int Config::maxBuffer            = 1500;
+int Config::CheckConnectionDelay = 100;

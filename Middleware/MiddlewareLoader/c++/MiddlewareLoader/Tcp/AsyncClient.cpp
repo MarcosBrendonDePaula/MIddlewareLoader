@@ -59,9 +59,9 @@ ErrorMessage AsyncClient::connect_(std::string ip, int port,int defaultbuffersiz
         Err.description = "Check IP or port";
         return Err;
     }
-    this->connected = true;
-    this->loopThread = std::thread(AsyncClient::loopFunction,this);
-
+	
+	this->connected = true;
+	
     std::map<std::string,void*> Args;
     Args["Client"]          = this;
     Args["Buffer"]          = NULL;
@@ -70,8 +70,9 @@ ErrorMessage AsyncClient::connect_(std::string ip, int port,int defaultbuffersiz
     for(auto event:this->events[(int)EventTypes::Connected]){
         event->Main(Args);
     }
-
+    
     if(detach) {
+		this->loopThread = std::thread(AsyncClient::loopFunction,this);
         this->loopThread.detach();
     }
     else {

@@ -15,7 +15,7 @@ private:
     int maxSize;
     int actualSize;
 public:
-
+    Buffer(){}
     Buffer(int maxSize = 1500);
     Buffer(std::string str = "",int maxSize = 1500);
 

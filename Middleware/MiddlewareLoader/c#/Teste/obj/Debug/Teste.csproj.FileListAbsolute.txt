@@ -9,3 +9,5 @@ C:\Users\nexga\Documents\GitHub\tcc\Middleware\MiddlewareLoader\c#\Teste\obj\Deb
 C:\Users\nexga\Documents\GitHub\tcc\Middleware\MiddlewareLoader\c#\Teste\obj\Debug\Teste.pdb
 C:\Users\nexga\Documents\GitHub\tcc\Middleware\MiddlewareLoader\c#\Teste\bin\Debug\MiddlewareLoader.dll
 C:\Users\nexga\Documents\GitHub\tcc\Middleware\MiddlewareLoader\c#\Teste\bin\Debug\MiddlewareLoader.dll.config
+C:\Users\nexga\Documents\GitHub\tcc\Middleware\MiddlewareLoader\c#\Teste\bin\Debug\Middleware.dll
+C:\Users\nexga\Documents\GitHub\tcc\Middleware\MiddlewareLoader\c#\Teste\bin\Debug\Middleware.pdb
