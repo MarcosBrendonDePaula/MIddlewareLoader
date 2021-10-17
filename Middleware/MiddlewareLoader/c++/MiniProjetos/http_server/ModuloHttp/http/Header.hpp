@@ -15,7 +15,7 @@ namespace easy::Header {
     class Response {
         public:
         string version;
-        unsigned stats;
+        string stats;
         string body;
         std::map<string,string> Headers;
 
@@ -25,20 +25,21 @@ namespace easy::Header {
     };
 
     Response::Response() {
-        body = "";
+        body = "\0";
         version = "HTTP/1.1";
-        stats = 0;
+        stats = "0";
     }
     
     string Response::to_str() {
-        string header = (version+" "+std::to_string(stats)+"\r\n");
+        string header = (version+" "+stats+"\r\n");
         
         for(auto i:Headers) {
             header += (i.first+": "+i.second+"\r\n");
         }
 
         header +="\r\n";
-        header += body;
+        if(!body.empty())
+            header += body;
         return header;
     }
     

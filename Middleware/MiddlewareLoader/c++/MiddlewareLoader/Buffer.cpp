@@ -25,13 +25,14 @@ Buffer::Buffer(std::string str, int maxSize) {
 }
 
 std::string Buffer::toString() {
-	std::string temp="";
-	try{
-		temp = std::string(&this->data[0],this->actualSize);
-	}catch(const std::exception& e) {
-		
-	}
-	return temp;
+	if(this->data.size()!=0 && this->actualSize > 0){
+		try{
+			return std::string(&this->data[0],this->actualSize);
+		}catch(const std::exception& e) {
+			return "";
+		}
+	}	
+	return "";
 }
 char* Buffer::getDataAccess() {
     return &data[0];

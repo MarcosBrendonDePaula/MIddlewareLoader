@@ -50,7 +50,9 @@ ErrorMessage AsyncServer::Use(MiddlewareModule* module, EventTypes event, int pr
 
     this->events[(int)event].push_back(module);
 
-    std::sort(this->events[(int)event].begin(),this->events[(int)event].end());
+    std::sort(this->events[(int)event].begin(),this->events[(int)event].end(),[](MiddlewareModule* m1,MiddlewareModule* m2) {
+		return (m1->priority < m2->priority);
+	});
     return DEFAULT;
 }
 

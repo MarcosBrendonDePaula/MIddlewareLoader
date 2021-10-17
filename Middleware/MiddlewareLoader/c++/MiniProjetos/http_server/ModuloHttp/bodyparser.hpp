@@ -1,3 +1,4 @@
+#pragma once
 #include "../../../MiddlewareLoader/Tcp/AsyncServer.h"
 #include "../../../MiddlewareLoader/MiddlewareModule.h"
 #include "http/Header.hpp"

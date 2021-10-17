@@ -1,3 +1,4 @@
+#pragma once
 #include <iostream>
 #include <fstream>
 #include <map>
@@ -19,6 +20,12 @@ auto MeMiList = Memi::get();
 class HttpServer : public MiddlewareModule{
     public:
         void Main(map<string,void *>&Args) {
+            
+            if((Args["answered"] != nullptr)){
+                cout<<"algum modulo respondeu primeiro"<<endl;
+                return;
+            }
+
             auto client = (ServerClient*)Args["Client"];
             easy::Header::Request req(((Buffer*)Args["Buffer"])->toString());
             uint64_t size=0;
@@ -29,7 +36,7 @@ class HttpServer : public MiddlewareModule{
                 File.open(Path+req.path,ios::in|ios::ate|ios::binary);
                 if(!File.is_open()) {
                     res.body =  "  ";
-                    res.stats = 404;
+                    res.stats = "404";
                     res.version = "HTTP/1.1";
                     res.Headers["content-length"] = "0";
                 }
