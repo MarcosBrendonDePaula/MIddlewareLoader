@@ -4,11 +4,12 @@
 #include <fstream>
 #include <map>
 
-#include "../../../../MiddlewareLoader/Tcp/AsyncServer.h"
+#include "../../../../../MiddlewareLoader/Tcp/AsyncServer.h"
 #include "../bodyparser.hpp"
 #include "../http/json.hpp"
 #include "../http/Utility.hpp"
 #include "../http/sha1/sha1.hpp"
+#include "../http/base64/base64.hpp"
 
 using namespace std;
 
@@ -36,10 +37,12 @@ class WebSocket : public MiddlewareModule{
                     std::cout<<"WebSocket is connected"<<std::endl;
                 }
                 while(true) {
-                    std::cout<<"Received:"<<this->sockets[client].client->recvBuffer().toString()<<std::endl;
+                    auto recved = this->sockets[client].client->recvBuffer();
+                    std::cout<<recved.getActualSize()<<" Received:"<<(char*)&recved.getData()[0]<<std::endl;
+                    std::cout<<recved.getActualSize()<<" Received:"<<websocketpp::base64_decode(recved.toString())<<std::endl;
                 }
             }
-
+            
             if(WebSocket::Debug) {
                 std::cout<<"WebSocket HandShake"<<std::endl;
             }
