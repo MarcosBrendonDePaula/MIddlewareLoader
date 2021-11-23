@@ -54,7 +54,7 @@ const std::vector<char> &Buffer::getData() const {
  * Copia o vector informado para o vector<char> do buffer.
  */
 void Buffer::setData(const std::vector<char> &data) {
-    Buffer::data = data;
+    this->data = data;
 }
 
 /**
@@ -69,7 +69,7 @@ int Buffer::getMaxSize() const {
  * Ajusta a quantidade maxima de bytes aceitas pelo buffer.
  */
 void Buffer::setMaxSize(int maxSize) {
-    Buffer::maxSize = maxSize;
+    this->maxSize = maxSize;
 }
 
 /**
@@ -85,7 +85,7 @@ int Buffer::getActualSize() const {
  * @return int : quantidade de bytes recebidos.
  */
 void Buffer::setActualSize(int actualSize) {
-    Buffer::actualSize = actualSize;
+    this->actualSize = actualSize;
 }
 
 /**

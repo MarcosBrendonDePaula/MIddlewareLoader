@@ -3,7 +3,7 @@
 #include <fstream>
 #include <map>
 
-#include "../../../MiddlewareLoader/Tcp/AsyncServer.h"
+#include "../../../Tcp/AsyncServer.h"
 #include "./bodyparser.hpp"
 #include "http/json.hpp"
 #include "http/Utility.hpp"
@@ -22,7 +22,7 @@ class HttpServer : public MiddlewareModule{
         void Main(map<string,void *>&Args) {
             
             if((Args["answered"] != nullptr)){
-                cout<<"algum modulo respondeu primeiro"<<endl;
+                cout<<"HttpServer: algum modulo respondeu primeiro"<<endl;
                 return;
             }
 

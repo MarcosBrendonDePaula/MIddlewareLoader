@@ -1,6 +1,6 @@
 #pragma once
-#include "../../../MiddlewareLoader/Tcp/AsyncServer.h"
-#include "../../../MiddlewareLoader/MiddlewareModule.h"
+#include "../../../Tcp/AsyncServer.h"
+#include "../../../MiddlewareModule.h"
 #include "http/Header.hpp"
 #include "http/json.hpp"
 
