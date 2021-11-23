@@ -16,7 +16,8 @@
         <button type="submit">Enviar</button>
     </form>
     <script>
-        var connection = new WebSocket('ws://127.0.0.1:25565')
+        var connection = new WebSocket('ws://127.0.0.1:25565/teste')
+        
         connection.onmessage = function (e) {
             console.log('Recebi!: ' + e.data);
         };

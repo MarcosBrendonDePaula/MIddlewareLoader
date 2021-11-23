@@ -29,12 +29,13 @@ class WBClient : public MiddlewareModule{
                 if(resp.first < 0) {
                     Args["answered"] = &answered;
                     instance->connected = false;
+                    WebSocket::Instances.erase(client);
                     client->disconnect();
                     return;
                 }
 
                 auto temp = resp.second + " Funcionou!";
-                instance->SendDatagram(temp);
+                instance->SendDataGram(temp);
                 Args["answered"] = &answered;
             }
         }

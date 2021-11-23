@@ -19,7 +19,8 @@ class WebsocketInstance{
         Socket* client;
         bool connected;
         std::pair<int,std::string> DecodeDataGrama(Buffer datagram);
-        int SendDatagram(std::string str);
+        int SendDataGram(std::string str);
+        std::string path;
 };
 
 WebsocketInstance::WebsocketInstance() {
@@ -29,37 +30,36 @@ WebsocketInstance::WebsocketInstance() {
 
 class WebSocket : public MiddlewareModule{
     private:
-        std::map<Socket*, WebsocketInstance> sockets;
         bool wbClient;
         bool answered;
     public:
+        static std::map<Socket*, WebsocketInstance> Instances;
         static bool Debug;
         void Main(map<string,void *>&Args);
         WebSocket() {
         }
 };
 
+std::map<Socket*, WebsocketInstance> WebSocket::Instances;
 
 void WebSocket::Main(map<string,void *>&Args) {
     auto client = (ServerClient*)Args["Client"];
    
-    if(this->sockets[client].connected) {
+    if(this->Instances[client].connected) {
         Args["wbclient"] = &wbClient;
-        Args["instance"] = &this->sockets[client];
+        Args["instance"] = &this->Instances[client];
         return;
     }
 
     easy::Header::Request req(((Buffer*)Args["Buffer"])->toString());
     if(req.Header["Upgrade"]=="websocket"){
         
-        
-
         if(WebSocket::Debug) {
             std::cout<<"WebSocket HandShake"<<std::endl;
         }
-
+        
         Args["answered"] = &answered;
-    
+
         std::string Key = req.Header["Sec-WebSocket-Key"];
 
         auto newKey = Key+ "258EAFA5-E914-47DA-95CA-C5AB0DC85B11";
@@ -78,15 +78,16 @@ void WebSocket::Main(map<string,void *>&Args) {
 
         client->sendBuffer(Buffer(header));
 
-        this->sockets[client].connected = true;
-        this->sockets[client].client = client;
-
+        this->Instances[client].connected = true;
+        this->Instances[client].client    = client;
+        this->Instances[client].path      = req.path;
         if(WebSocket::Debug) {
             std::cout<<"WebSocket Base64 key:"<<base64<<" Accepted"<<std::endl;
         }
 
         if(WebSocket::Debug) {
             std::cout<<"WebSocket is connected"<<std::endl;
+            
         }
 
     }
@@ -157,7 +158,7 @@ std::pair<int,std::string> WebsocketInstance::DecodeDataGrama(Buffer datagram) {
     return std::make_pair(packet_length,std::string(&temp[0],temp.size()));
 }
 
-int WebsocketInstance::SendDatagram(std::string str) {
+int WebsocketInstance::SendDataGram(std::string str) {
     
     unsigned char* data = (unsigned char*) str.c_str();
     int data_length     = str.size(); 
