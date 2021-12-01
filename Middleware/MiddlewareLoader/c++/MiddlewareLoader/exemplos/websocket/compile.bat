@@ -1,0 +1,2 @@
+g++ .\main.cpp ..\..\Buffer.cpp ..\..\ErrorMessage.cpp ..\..\EventTypes.cpp ..\..\MiddlewareModule.cpp ..\..\Socket.cpp ..\..\Tcp\AsyncClient.cpp ..\..\Tcp\AsyncServer.cpp ..\..\Tcp\SyncClient.cpp -o server -lws2_32
+pause

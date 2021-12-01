@@ -7,20 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-    <audio controls>
-        <source src="musica.mp3" type="audio/mpeg">
-    </audio>
-    <form action="/file" method="POST" enctype="multipart/form-data">
-        <input type="file" name="file">
-		<input type="number" value="10" name="valor">
-        <button type="submit">Enviar</button>
-    </form>
-    <script>
-        var connection = new WebSocket('ws://127.0.0.1:25565/teste')
-        
-        connection.onmessage = function (e) {
-            console.log('Recebi!: ' + e.data);
-        };
-    </script>
+	<h1>Teste</h1>
 </body>
 </html>

@@ -1,9 +1,3 @@
-import struct
-from struct import *
-
-number = 10
-
-pa = struct.pack("Q",number)
 print(len(pa))
 
 
