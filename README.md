@@ -3,7 +3,7 @@
 
 O Middleware Loader como o nome ja diz é um carregador de middleware que permite a acoplação de varios middlewares e serviços de forma rapida e facil, reduzindo assim possiveis problemas de implementação.
 
-## Installation C++
+## Instalação C++
 O Middleware Loader requer no minimo o C++ 17
 
 Gerando Make 
