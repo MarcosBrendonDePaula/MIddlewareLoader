@@ -1,7 +1,38 @@
-cmake_minimum_required(VERSION 3.19)
-project(MiddlewareLoader)
+cmake_minimum_required(VERSION 3.1)
+project(MiddlewareLoader "CXX")
+set(CMAKE_CXX_STANDARD 17)
 
-set(CMAKE_CXX_STANDARD 20)
+file(GLOB sourcesServer "${CMAKE_CURRENT_SOURCE_DIR}/src/server/*.cpp")
+file(GLOB sourcesClient "${CMAKE_CURRENT_SOURCE_DIR}/src/client/*.cpp")
+file(GLOB library "${CMAKE_CURRENT_SOURCE_DIR}/include/*.cpp")
+file(GLOB libraryTcp "${CMAKE_CURRENT_SOURCE_DIR}/include/Tcp/*.cpp")
 
 link_libraries(ws2_32)
-add_executable(MiddlewareLoader main.cpp Socket.cpp Socket.h MiddlewareModule.cpp MiddlewareModule.h ErrorMessage.cpp ErrorMessage.h EventTypes.cpp EventTypes.h Buffer.cpp Buffer.h Tcp/AsyncServer.cpp Tcp/AsyncServer.h Tcp/AsyncClient.cpp Tcp/AsyncClient.h Utility.cpp Utility.h Tcp/SyncClient.cpp Tcp/SyncClient.h Middleware/Middleware.cpp Middleware/Middleware.h Middleware/Node.cpp Middleware/Node.h Middleware/Config.cpp Middleware/Config.h Middleware/FunctionManager.cpp Middleware/FunctionManager.h)
+
+#Criando target com codigo src a ser compilado
+add_executable(Server ${sourcesServer} ${library} ${libraryTcp})
+add_executable(Client ${sourcesClient} ${library} ${libraryTcp})
+#target_include_directories(MiddlewareLoader PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/include")
+target_include_directories(Server PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/include")
+target_include_directories(Client PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/include")
+
+#set_target_properties(MiddlewareLoader 
+#    PROPERTIES
+#    ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib
+#    LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib
+#    RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin
+#)
+
+set_target_properties(Client 
+    PROPERTIES
+    ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/Client/lib
+    LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/Client/lib
+    RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/Client/bin
+)
+
+set_target_properties(Server 
+    PROPERTIES
+    ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/Server/lib
+    LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/Server/lib
+    RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/Server/bin
+)

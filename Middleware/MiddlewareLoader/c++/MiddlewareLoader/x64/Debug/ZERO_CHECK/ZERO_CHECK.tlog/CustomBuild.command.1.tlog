@@ -1,0 +1,10 @@
+^C:\USERS\NEXGA\DOCUMENTS\GITHUB\TCC\MIDDLEWARE\MIDDLEWARELOADER\C++\MIDDLEWARELOADER\CMAKEFILES\88734360C6340C8F15211826E5E78F30\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/nexga/Documents/GitHub/tcc/Middleware/MiddlewareLoader/c++/MiddlewareLoader -BC:/Users/nexga/Documents/GitHub/tcc/Middleware/MiddlewareLoader/c++/MiddlewareLoader --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/nexga/Documents/GitHub/tcc/Middleware/MiddlewareLoader/c++/MiddlewareLoader/MiddlewareLoader.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
